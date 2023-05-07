@@ -64,14 +64,17 @@
 				localStorage.setItem('color', color);
 			});
 		});
-
-		document.addEventListener('click', (e) => {
-			if (e.target.closest('#themer-dropdown-content')) return;
-
-			activeSideBar = false;
-		});
 	});
 </script>
+
+<svelte:window
+	on:click={(e) => {
+		if (e.target instanceof HTMLElement) {
+			if (e.target.closest('#themer-dropdown-content')) return;
+		}
+		activeSideBar = false;
+	}}
+/>
 
 <div class="themer-container">
 	<div class="themer-dropdown">
@@ -234,14 +237,6 @@
 		border-radius: 0.2rem;
 		margin: 5px 5px;
 
-		&.light {
-			background-color: #f7fdff;
-		}
-
-		&.dark {
-			background-color: #010409;
-		}
-
 		&.green {
 			background-color: #00dc82;
 		}
@@ -265,13 +260,6 @@
 		&.purple {
 			background-color: #8d44ad;
 		}
-	}
-
-	.theme-switch-title {
-		color: #eee;
-		font-size: 13px;
-		font-weight: 300;
-		align-self: center;
 	}
 
 	.theme-switch-label {
