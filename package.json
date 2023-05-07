@@ -1,0 +1,45 @@
+{
+	"name": "sveltyboi",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev --port 8020 --host",
+		"build": "vite build",
+		"preview": "vite preview --port 8030 --host",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"type": "module",
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.1",
+		"@sveltejs/adapter-node": "^1.2.4",
+		"@sveltejs/kit": "^1.16.2",
+		"@types/markdown-it": "^12.2.3",
+		"@types/node": "^20.1.0",
+		"cross-env": "^7.0.3",
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.0",
+		"prisma": "^4.13.0",
+		"sass": "^1.62.1",
+		"svelte": "^3.59.0",
+		"svelte-check": "^3.3.1",
+		"tslib": "^2.5.0",
+		"typescript": "^5.0.4",
+		"vite": "^4.3.5"
+	},
+	"dependencies": {
+		"@prisma/client": "^4.13.0",
+		"chalk": "^5.2.0",
+		"dayjs": "^1.11.7",
+		"dotenv": "^16.0.3",
+		"highlight.js": "^11.8.0",
+		"ioredis": "^5.3.2",
+		"markdown-it": "^13.0.1",
+		"markdown-it-anchor": "^8.6.7"
+	},
+	"prisma": {
+		"seed": "ts-node prisma/seed.ts"
+	}
+}
