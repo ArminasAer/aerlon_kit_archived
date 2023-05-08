@@ -105,7 +105,7 @@
 		<div class:show={activeSideBar} class="themer-dropdown-content" id="themer-dropdown-content">
 			<div class="side-navbar">
 				<span class="themes-container-title">Links</span>
-				<NavLink href="/" title="Home" />
+				<NavLink href="/" title="Blog" />
 				<NavLink href="/series" title="Series" />
 				<NavLink href="/rng" title="RNG" />
 				<NavLink href="/readme" title="Readme" />
@@ -258,7 +258,7 @@
 		}
 
 		&.purple {
-			background-color: #8d44ad;
+			background-color: #c072d4;
 		}
 	}
 

@@ -33,7 +33,7 @@
 			</svg>
 		</div>
 		<div class="navbar-links">
-			<NavLink href="/" title="Home" />
+			<NavLink href="/" title="Blog" />
 			<NavLink href="/series" title="Series" />
 			<NavLink href="/rng" title="RNG" />
 			<NavLink href="/readme" title="Readme" />

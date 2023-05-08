@@ -1,8 +1,7 @@
-// default theme - dark and green
 :root {
 	// Html
 	--html-color: #ffffff;
-	--background-color: #111111;
+	--background-color: #131314;
 
 	// Navbar
 	--navbar-background: #000;
@@ -39,7 +38,7 @@
 	--main-header-color: #d4d4da;
 
 	// Markdown
-	--markdown-p: #d4d4da;
+	--markdown-color: #babac2;
 	--code-background-color: transparent;
 	--markdown-tags-color: #ffb951;
 	--markdown-h1-color: #d4d4da;
@@ -59,7 +58,7 @@
 	// Navbar
 	--navbar-background: #ffffff;
 	--navbar-border-color: #eaeaea;
-	--navbar-link: #666666;
+	--navbar-link: #272727;
 	--navbar-link-hover-background: #3f3f46;
 	--navbar-logo-inner: #2d2d2d;
 	--navbar-settings: #2d2d2d;
@@ -86,7 +85,7 @@
 	--main-header-color: #2d2d2d;
 
 	// Markdown
-	--markdown-p: #2d2d2d;
+	--markdown-color: #2d2d2d;
 	--markdown-h1-color: #2d2d2d;
 }
 
@@ -181,21 +180,21 @@
 }
 
 [data-color='purple'] {
-	--theme-main-color: #8d44ad;
+	--theme-main-color: #c072d4;
 
 	// Navbar
-	--navbar-link-hover: #8d44ad;
+	--navbar-link-hover: #c072d4;
 	--navbar-link-hover-background: #3f3f46;
-	--navbar-logo-outer: #8d44ad;
+	--navbar-logo-outer: #c072d4;
 
 	// Card
-	--card-title-hover: #8d44ad;
+	--card-title-hover: #c072d4;
 
 	// Featured Card
 	--card-featured-background: #8d44ad17;
-	--card-featured-border: #8d44ad;
+	--card-featured-border: #c072d4;
 
-	--container-header: #8d44ad;
+	--container-header: #c072d4;
 }
 
 html {
@@ -236,7 +235,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #888;
+	background: var(--theme-main-color);
 	border-radius: 10px;
 
 	&:hover {
