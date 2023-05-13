@@ -15,7 +15,7 @@ function execShellCommand(cmd: any) {
 
 export const GET = (async ({ request }) => {
 	// await execShellCommand('pnpm build');
-	await execShellCommand('node build');
+	// await execShellCommand('pm2 reload svelte');
 
 	return json(12);
 }) satisfies RequestHandler;
