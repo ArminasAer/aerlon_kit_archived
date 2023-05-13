@@ -5,6 +5,8 @@ import type { Post } from '@prisma/client';
 
 const redisClient = new Redis();
 
+const REDIS_CACHE = 'posts_published';
+
 redisClient.on('error', (err) => {
 	// @ts-ignore
 	if (err.code === 'ECONNREFUSED') {
@@ -14,7 +16,7 @@ redisClient.on('error', (err) => {
 });
 
 export async function getPostsCacheRaw() {
-	const postsCacheRaw = await redisClient.get('posts_published');
+	const postsCacheRaw = await redisClient.get(REDIS_CACHE);
 
 	return postsCacheRaw;
 }
@@ -22,7 +24,7 @@ export async function getPostsCacheRaw() {
 export async function initializePublishedPostCache(posts: Post[]) {
 	const publishedPosts = posts.filter((p) => p.published);
 
-	await redisClient.set('posts_published', JSON.stringify(publishedPosts));
+	await redisClient.set(REDIS_CACHE, JSON.stringify(publishedPosts));
 
 	console.log(chalk.green(`💾 [redis][startup]: posts cached in redis`));
 }

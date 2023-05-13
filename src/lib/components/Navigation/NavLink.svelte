@@ -2,9 +2,10 @@
 	import { page } from '$app/stores';
 	export let href: string;
 	export let title: string;
+	export let setClass: string;
 </script>
 
-<a {href} class="navbar-link" class:active={$page.url.pathname === href}>
+<a {href} class={`navbar-link ${setClass}`} class:active={$page.url.pathname === href}>
 	{title}
 </a>
 
@@ -33,12 +34,12 @@
 		}
 	}
 
-	// this should be rethought
-	@media only screen and (max-width: 515px) {
-		.navbar-link {
-			padding-bottom: 10px;
-			padding-left: 10px;
-			color: #fff;
+	.sidenav {
+		margin-bottom: 10px;
+		color: #ffffff;
+
+		:not(:last-child) {
+			margin-bottom: 0;
 		}
 	}
 </style>

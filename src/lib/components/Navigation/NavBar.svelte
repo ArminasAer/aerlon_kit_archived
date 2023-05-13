@@ -7,8 +7,8 @@
 	<nav class="navbar" id="navbar">
 		<div class="navbar-logo">
 			<svg
-				width="100%"
-				height="100%"
+				width="45px"
+				height="45px"
 				viewBox="0 0 1500 1500"
 				version="1.1"
 				style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
@@ -33,7 +33,7 @@
 			</svg>
 		</div>
 		<div class="navbar-links">
-			<NavLinks />
+			<NavLinks setClass="" />
 		</div>
 		<SideBar />
 	</nav>
@@ -71,15 +71,9 @@
 
 	.navbar-links {
 		letter-spacing: 0.03em;
-	}
-
-	@media only screen and (max-width: 515px) {
-		.navbar-links {
-			display: none;
-		}
-
-		.navbar-logo {
-			margin-right: 0;
-		}
+		height: 20px;
+		overflow: hidden;
+		padding-right: 40px;
+		text-align: center;
 	}
 </style>

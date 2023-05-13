@@ -59,6 +59,13 @@
 {/if}
 <Navbar />
 
+<div class="wip-container">
+	<div class="wip">
+		<span class="wip-title">Site is under active development!</span>
+		<span class="wip-details">Many things are broken or placeholder</span>
+	</div>
+</div>
+
 <slot />
 
 <style lang="scss">
@@ -72,11 +79,13 @@
 		width: 100vw;
 		border-radius: 0;
 	}
+
 	/* bar: */
 	progress::-webkit-progress-bar {
 		background-color: var(--bar-color);
 		width: 100%;
 	}
+
 	progress {
 		background-color: var(--bar-color);
 	}
@@ -85,10 +94,59 @@
 	progress::-webkit-progress-value {
 		background-color: var(--theme-main-color) !important;
 	}
+
 	progress::-moz-progress-bar {
 		background-color: var(--theme-main-color) !important;
 	}
+
 	progress {
 		color: var(--theme-main-color);
+	}
+
+	.wip-container {
+		display: grid;
+	}
+
+	.wip {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-self: center;
+		width: max-content;
+		padding: 15px 15px 15px 15px;
+		background: #ffa60010;
+		border: 1px solid #ffa500;
+		border-radius: 0.4rem;
+		margin-bottom: 20px;
+		height: min-content;
+	}
+
+	.wip-title {
+		font-size: 20px;
+		font-weight: 600;
+		margin-bottom: 5px;
+		-webkit-animation: colorchange 20s infinite ease-in;
+	}
+
+	@-webkit-keyframes colorchange {
+		0% {
+			color: #ffffff;
+		}
+
+		25% {
+			color: #ffbc04;
+		}
+
+		50% {
+			color: #ff3604;
+		}
+
+		75% {
+			color: #ffbc04;
+		}
+
+		100% {
+			color: #ffffff;
+		}
 	}
 </style>

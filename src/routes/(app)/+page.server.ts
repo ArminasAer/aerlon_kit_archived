@@ -1,15 +1,16 @@
 import { getPostsCacheRaw } from '$lib/redis';
 import type { Post } from '@prisma/client';
 import type { PageServerLoad } from './$types';
+import { getPostsMetaList } from '$lib/server/models/post';
 
 export const load = (async ({ params }) => {
-	const postsRaw = (await getPostsCacheRaw()) || '';
+	const posts = await getPostsMetaList();
 
 	return {
-		posts: (await JSON.parse(postsRaw)) as Post[]
+		posts
 	};
 }) satisfies PageServerLoad;
 
-export const prerender = true;
+export const prerender = false;
 export const ssr = true;
 export const csr = true;
