@@ -104,6 +104,7 @@
 		</button>
 		<div class:show={activeSideBar} class="themer-dropdown-content" id="themer-dropdown-content">
 			<div class="side-navbar">
+				<span class="themes-container-title">Links</span>
 				<NavLinks />
 			</div>
 			<div class="themer-content-themes-container">
