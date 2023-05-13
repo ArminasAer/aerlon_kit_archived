@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import NavLink from './NavLink.svelte';
+	import NavLinks from './NavLinks.svelte';
 
 	let activeSideBar: boolean = false;
 
@@ -104,11 +104,7 @@
 		</button>
 		<div class:show={activeSideBar} class="themer-dropdown-content" id="themer-dropdown-content">
 			<div class="side-navbar">
-				<span class="themes-container-title">Links</span>
-				<NavLink href="/" title="Blog" />
-				<NavLink href="/series" title="Series" />
-				<NavLink href="/rng" title="RNG" />
-				<NavLink href="/readme" title="Readme" />
+				<NavLinks />
 			</div>
 			<div class="themer-content-themes-container">
 				<div class="themes-container-title">
@@ -333,7 +329,7 @@
 		transform: translateX(22px);
 	}
 
-	@media only screen and (max-width: 380px) {
+	@media only screen and (max-width: 515px) {
 		.themer-dropdown-content {
 			flex-direction: column;
 			justify-content: start;

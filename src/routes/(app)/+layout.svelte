@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './common.scss';
 
-	import Navbar from '$lib/components/NavBar.svelte';
+	import Navbar from '$lib/components/Navigation/NavBar.svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 	import { navigating } from '$app/stores';

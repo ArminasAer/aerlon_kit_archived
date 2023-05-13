@@ -223,10 +223,10 @@ body {
 }
 
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 6px;
 
 	&:horizontal {
-		height: 8px;
+		height: 6px;
 	}
 }
 
@@ -236,7 +236,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	background: var(--theme-main-color);
-	border-radius: 10px;
+	border-radius: 6px;
 
 	&:hover {
 		background: #555;

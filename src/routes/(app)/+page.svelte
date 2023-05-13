@@ -7,7 +7,12 @@
 
 <div class="main-container">
 	<div class="cards-container">
-		{#each data.posts as post (post.id)}
+		{#each data.posts.filter((p) => p.featured) as post (post.id)}
+			<div class="featured-posts">
+				<Card {post} />
+			</div>
+		{/each}
+		{#each data.posts.filter((p) => !p.featured) as post (post.id)}
 			<Card {post} />
 		{/each}
 	</div>
@@ -30,14 +35,15 @@
 		justify-content: center;
 	}
 
-	// .featured-posts {
-	//   min-width: 300px;
-	//   padding: 20px 20px 0px 20px;
-	//   background: var(--card-featured-background);
-	//   border: 1px solid var(--card-featured-border);
-	//   border-radius: 0.4rem;
-	//   margin-bottom: 20px;
-	// }
+	.featured-posts {
+		min-width: 300px;
+		padding: 15px 15px 0px 15px;
+		background: var(--card-featured-background);
+		border: 1px solid var(--card-featured-border);
+		border-radius: 0.4rem;
+		margin-bottom: 20px;
+		height: min-content;
+	}
 
 	@media only screen and (min-width: 400px) {
 		.main-container {

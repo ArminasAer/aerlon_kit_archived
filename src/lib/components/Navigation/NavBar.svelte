@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NavLink from './NavLink.svelte';
+	import NavLinks from './NavLinks.svelte';
 	import SideBar from './SideBar.svelte';
 </script>
 
@@ -33,10 +33,7 @@
 			</svg>
 		</div>
 		<div class="navbar-links">
-			<NavLink href="/" title="Blog" />
-			<NavLink href="/series" title="Series" />
-			<NavLink href="/rng" title="RNG" />
-			<NavLink href="/readme" title="Readme" />
+			<NavLinks />
 		</div>
 		<SideBar />
 	</nav>
@@ -76,7 +73,7 @@
 		letter-spacing: 0.03em;
 	}
 
-	@media only screen and (max-width: 380px) {
+	@media only screen and (max-width: 515px) {
 		.navbar-links {
 			display: none;
 		}

@@ -34,7 +34,7 @@
 	}
 
 	// this should be rethought
-	@media only screen and (max-width: 380px) {
+	@media only screen and (max-width: 515px) {
 		.navbar-link {
 			padding-bottom: 10px;
 			padding-left: 10px;

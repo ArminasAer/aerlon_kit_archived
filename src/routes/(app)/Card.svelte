@@ -18,7 +18,7 @@
 			</a>
 		</div>
 		<div class="card-snippet-container">
-			<span class="card-snippet">{post.snippet}</span>
+			<span class="card-snippet">{post.postSnippet}</span>
 		</div>
 	</div>
 	<span class="card-categories">
@@ -34,9 +34,7 @@
 	.card {
 		display: flex;
 		flex-direction: column;
-		// text-align: center;
-		// justify-items: center;
-		// align-items: center;
+		// padding: 20px 20px 0 20px;
 		width: 100%;
 		margin-bottom: 20px;
 		-webkit-user-select: none; /* Safari */
