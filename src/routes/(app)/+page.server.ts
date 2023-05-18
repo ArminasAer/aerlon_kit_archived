@@ -1,16 +1,35 @@
-import { getPostsCacheRaw } from '$lib/redis';
-import type { Post } from '@prisma/client';
+import MarkdownIt from 'markdown-it';
+import MarkdownAnchorfrom from 'markdown-it-anchor';
+// @ts-ignore
+import MarkdownMeta from 'markdown-it-meta';
+import MarkdownPrism from 'markdown-it-prism';
+import fs from 'fs';
+
 import type { PageServerLoad } from './$types';
-import { getPostsMetaList } from '$lib/server/models/post';
 
 export const load = (async ({ params }) => {
-	const posts = await getPostsMetaList();
+	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
+
+	const dir = fs.readdirSync('./markdown');
+
+	let content: meta[] = [];
+
+	dir.map((p) => {
+		const file = fs.readFileSync(`./markdown/${p}`).toString();
+		md.render(file);
+
+		// @ts-ignore
+		const meta = md.meta as meta;
+		meta.fileName = p.split('.')[0];
+
+		content.push(meta);
+	});
 
 	return {
-		posts
+		posts: content
 	};
 }) satisfies PageServerLoad;
 
-export const prerender = false;
+export const prerender = true;
 export const ssr = true;
 export const csr = true;

@@ -1,1 +1,0 @@
-<h3>admin panel</h3>

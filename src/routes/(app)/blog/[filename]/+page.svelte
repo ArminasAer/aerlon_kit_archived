@@ -9,12 +9,12 @@
 
 <div class="blog-container">
 	<div class="markdown-container">
-		<h2 class="title">{data.post?.title}</h2>
-		<h4 class="date">{dayjs(data.post?.date).format('MMMM D, YYYY')}</h4>
-		{#each data.post?.categories as category}
+		<h2 class="title">{data.meta.title}</h2>
+		<h4 class="date">{dayjs(data.meta.date).format('MMMM D, YYYY')}</h4>
+		{#each data.meta.categories as category}
 			<span>{category}{' / '}</span>
 		{/each}
-		<div>{@html data.post?.markdown}</div>
+		<div>{@html data.markdown}</div>
 	</div>
 </div>
 

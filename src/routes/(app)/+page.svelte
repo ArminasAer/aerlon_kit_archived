@@ -7,12 +7,12 @@
 
 <div class="main-container">
 	<div class="cards-container">
-		{#each data.posts.filter((p) => p.featured) as post (post.id)}
+		{#each data.posts.filter((p) => p.featured) as post (post.fileName)}
 			<div class="featured-posts">
 				<Card {post} />
 			</div>
 		{/each}
-		{#each data.posts.filter((p) => !p.featured) as post (post.id)}
+		{#each data.posts.filter((p) => !p.featured) as post (post.fileName)}
 			<Card {post} />
 		{/each}
 	</div>

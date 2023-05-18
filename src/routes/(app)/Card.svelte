@@ -1,8 +1,7 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
-	import type { Post } from '@prisma/client';
 
-	export let post: Post;
+	export let post: meta;
 </script>
 
 <div class="card">
@@ -13,12 +12,12 @@
 			</span>
 		</div>
 		<div class="card-header">
-			<a class="card-header-anchor" href={`/blog/${post.slug}`}>
+			<a class="card-header-anchor" href={`/blog/${post.fileName}`}>
 				<span class="card-title">{post.title}</span>
 			</a>
 		</div>
 		<div class="card-snippet-container">
-			<span class="card-snippet">{post.postSnippet}</span>
+			<span class="card-snippet">{post.post_snippet}</span>
 		</div>
 	</div>
 	<span class="card-categories">
