@@ -38,8 +38,12 @@
 
 	$: {
 		if ($navigating) {
-			increase();
-			isVisible = true;
+			setTimeout(() => {
+				if ($navigating) {
+					increase();
+					isVisible = true;
+				}
+			}, 1000);
 		}
 		if (!$navigating) {
 			p.update((_) => _ + 0.3);
