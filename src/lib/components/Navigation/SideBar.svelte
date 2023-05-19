@@ -330,7 +330,7 @@
 		transform: translateX(22px);
 	}
 
-	@media only screen and (max-width: 515px) {
+	@media only screen and (max-width: 530px) {
 		.themer-dropdown-content {
 			flex-direction: column;
 			justify-content: start;

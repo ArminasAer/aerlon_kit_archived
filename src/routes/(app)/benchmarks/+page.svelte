@@ -12,6 +12,17 @@
 	}
 </script>
 
-<h3>HTTP Benchmarks</h3>
+<div class="main-container">
+	<h2>HTTP Benchmarks</h2>
+</div>
 
-<button on:click={builder}>Build</button>
+<style lang="scss">
+	.main-container {
+		display: flex;
+		flex-direction: column;
+		margin-left: 6%;
+		margin-right: 6%;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+</style>

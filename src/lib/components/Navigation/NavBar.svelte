@@ -72,8 +72,11 @@
 	.navbar-links {
 		letter-spacing: 0.03em;
 		height: 20px;
-		overflow: hidden;
-		padding-right: 40px;
-		text-align: center;
+	}
+
+	@media only screen and (max-width: 530px) {
+		.navbar-links {
+			display: none;
+		}
 	}
 </style>

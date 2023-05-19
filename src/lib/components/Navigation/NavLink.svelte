@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	export let href: string;
 	export let title: string;
-	export let setClass: string;
+	export let setClass: 'sidenav' | '';
 </script>
 
 <a {href} class={`navbar-link ${setClass}`} class:active={$page.url.pathname === href}>
@@ -36,9 +36,14 @@
 
 	.sidenav {
 		margin-bottom: 10px;
-		color: #ffffff;
+		color: #fff;
+		font-weight: 300;
 
-		:not(:last-child) {
+		&.active {
+			color: var(--navbar-link-hover);
+		}
+
+		&:last-child {
 			margin-bottom: 0;
 		}
 	}
