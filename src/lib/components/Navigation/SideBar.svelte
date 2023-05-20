@@ -146,9 +146,9 @@
 		display: flex;
 		justify-self: flex-end;
 		// align-self: start;
-		margin-right: 20px;
+		margin-left: 20px;
 		position: absolute;
-		right: 0;
+		left: 0;
 	}
 
 	.themer-dropdown {
@@ -185,12 +185,10 @@
 		justify-content: center;
 		width: 150px;
 		top: 0;
-		right: -150px;
-		transition: right 0.4s ease;
+		left: -150px;
+		transition: left 0.3s ease;
 		background-color: var(--themer-content-background);
-		border-left: 1px solid #30363d;
 		overflow: auto;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 		z-index: 1;
 		color: #fff;
 		height: 100vh;
@@ -199,7 +197,7 @@
 
 		&.show {
 			position: fixed;
-			right: 0;
+			left: 0;
 		}
 
 		&:focus {

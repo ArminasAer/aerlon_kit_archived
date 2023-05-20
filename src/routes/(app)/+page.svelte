@@ -1,20 +1,31 @@
-<script lang="ts">
-	import type { PageData } from './$types';
-	import Card from './Card.svelte';
-
-	export let data: PageData;
-</script>
-
 <div class="main-container">
-	<div class="cards-container">
-		{#each data.posts.filter((p) => p.featured) as post (post.fileName)}
-			<div class="featured-posts">
-				<Card {post} />
-			</div>
-		{/each}
-		{#each data.posts.filter((p) => !p.featured) as post (post.fileName)}
-			<Card {post} />
-		{/each}
+	<div class="navbar-container">
+		<svg
+			viewBox="0 0 1500 1500"
+			version="1.1"
+			style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+		>
+			<path id="shape_fill" d="M1500,750l-750,-750l-750,750l750,750l750,-750Z" style="fill:none;" />
+			<g>
+				<g>
+					<path
+						class="navbar-logo-inner"
+						d="M1185.85,749.999l-435.926,-435.923l-298.059,298.059l167.329,-0l130.977,-130.978l268.811,268.842l-268.811,268.844l-130.977,-130.978l-167.329,0l298.059,298.059l435.926,-435.925Z"
+					/>
+					<path
+						class="navbar-logo-outer"
+						d="M590.109,802.2l0.001,-104.4l-369.145,0l529.084,-529.084l449.843,449.842l168.666,0l-618.558,-618.558l-750,750l750,750l618.558,-618.558l-168.666,-0l-449.843,449.842l-529.084,-529.084l369.144,-0Z"
+					/>
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="home-content">
+		<h3>Blog and HTTP Benchmarking site</h3>
+		<h4>
+			My goal is to benchmark HTTP libraries across large sets of languages, hardware and data
+			structures...
+		</h4>
 	</div>
 </div>
 
@@ -28,67 +39,21 @@
 		margin-bottom: 20px;
 	}
 
-	.cards-container {
-		display: grid;
-		grid-template-columns: auto;
-		justify-items: center;
-		justify-content: center;
+	.navbar-container {
+		height: 175px;
+		width: 175px;
+		margin-bottom: 5px;
 	}
 
-	.featured-posts {
-		min-width: 300px;
-		padding: 15px 15px 0px 15px;
-		background: var(--card-featured-background);
-		border: 1px solid var(--card-featured-border);
-		border-radius: 0.4rem;
-		margin-bottom: 20px;
-		height: min-content;
+	.navbar-logo-outer {
+		fill: var(--navbar-logo-outer);
 	}
 
-	@media only screen and (min-width: 400px) {
-		.main-container {
-			margin-left: 10%;
-			margin-right: 10%;
-		}
+	.navbar-logo-inner {
+		fill: var(--navbar-logo-inner);
 	}
 
-	@media only screen and (min-width: 600px) {
-		.main-container {
-			margin-left: 15%;
-			margin-right: 15%;
-		}
-	}
-
-	@media only screen and (min-width: 800px) {
-		.main-container {
-			margin-left: 10%;
-			margin-right: 10%;
-		}
-
-		.cards-container {
-			grid-template-columns: 1fr 1fr;
-			gap: 1.5rem;
-		}
-	}
-
-	@media only screen and (min-width: 1025px) {
-		.main-container {
-			margin-left: 10%;
-			margin-right: 10%;
-		}
-	}
-
-	@media only screen and (min-width: 1281px) {
-		.main-container {
-			margin-left: 20%;
-			margin-right: 20%;
-		}
-	}
-
-	@media only screen and (min-width: 1350px) {
-		.main-container {
-			margin-left: 30%;
-			margin-right: 30%;
-		}
+	.home-content {
+		text-align: center;
 	}
 </style>

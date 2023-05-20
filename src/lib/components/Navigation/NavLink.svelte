@@ -12,9 +12,9 @@
 <style lang="scss">
 	.navbar-link {
 		align-self: center;
-		padding: 0px 5px;
+		padding: 0px 10px;
 		font-size: 17px;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 1;
 		color: var(--navbar-link);
 		text-decoration: none;

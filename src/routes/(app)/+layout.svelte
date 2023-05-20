@@ -134,10 +134,6 @@
 
 	@-webkit-keyframes colorchange {
 		0% {
-			color: #fdfb5e;
-		}
-
-		25% {
 			color: #ffbc04;
 		}
 
@@ -145,12 +141,8 @@
 			color: #ff3604;
 		}
 
-		75% {
+		100% {
 			color: #ffbc04;
-		}
-
-		0% {
-			color: #fdfb5e;
 		}
 	}
 </style>
