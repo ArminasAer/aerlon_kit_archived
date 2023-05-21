@@ -1,3 +1,11 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	import './snippet.scss';
+
+	export let data: PageData;
+</script>
+
 <div class="main-container">
 	<div class="navbar-container">
 		<svg
@@ -26,6 +34,9 @@
 			My goal is to benchmark HTTP libraries across large sets of languages, hardware and data
 			structures...
 		</h4>
+		<div class="main-snippet">
+			{@html data.markdown}
+		</div>
 	</div>
 </div>
 
@@ -33,15 +44,14 @@
 	.main-container {
 		display: flex;
 		flex-direction: column;
-		margin-left: 6%;
-		margin-right: 6%;
+		margin-left: 4%;
+		margin-right: 4%;
 		align-items: center;
-		margin-bottom: 20px;
 	}
 
 	.navbar-container {
-		height: 175px;
-		width: 175px;
+		height: 125px;
+		width: 125px;
 		margin-bottom: 5px;
 	}
 
@@ -55,5 +65,11 @@
 
 	.home-content {
 		text-align: center;
+	}
+
+	.main-snippet {
+		display: grid;
+		max-width: 560px;
+		margin: auto;
 	}
 </style>

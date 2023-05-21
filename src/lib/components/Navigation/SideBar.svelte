@@ -97,10 +97,12 @@
 	.themer-container {
 		display: flex;
 		justify-self: flex-end;
-		// align-self: start;
-		margin-left: 20px;
+		margin-top: 20px;
+		margin-right: 15px;
 		position: absolute;
-		left: 0;
+		top: 0;
+		right: 0;
+		z-index: 15;
 	}
 
 	.themer-dropdown {
@@ -137,9 +139,9 @@
 		justify-content: center;
 		width: 150px;
 		top: 0;
-		left: -150px;
-		transition: left 0.3s ease;
-		border-right: 2px solid rgb(41, 41, 41);
+		right: -150px;
+		transition: right 0.3s ease;
+		border-left: 2px solid rgb(41, 41, 41);
 		background-color: var(--themer-content-background);
 		overflow: auto;
 		z-index: 1;
@@ -150,7 +152,7 @@
 
 		&.show {
 			position: fixed;
-			left: 0;
+			right: 0;
 		}
 
 		&:focus {
@@ -246,6 +248,10 @@
 		.themer-dropdown-content {
 			flex-direction: column;
 			justify-content: start;
+		}
+
+		.themer-container {
+			margin-right: 24px;
 		}
 
 		.side-navbar {

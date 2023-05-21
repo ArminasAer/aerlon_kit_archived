@@ -4,8 +4,8 @@
 </script>
 
 <div class="navigation-container">
+	<SideBar />
 	<nav class="navbar" id="navbar">
-		<SideBar />
 		<a href="/">
 			<div class="navbar-logo">
 				<svg
@@ -45,16 +45,15 @@
 		position: sticky;
 		top: 0;
 		width: 100%;
-		padding: 12px 0px;
 		margin-bottom: 15px;
 		background-color: var(--navbar-background);
-		backdrop-filter: blur(3px);
 	}
 
 	.navbar {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding: 12px 0px;
 	}
 
 	.navbar-logo {
@@ -77,11 +76,16 @@
 	}
 
 	@media only screen and (max-width: 530px) {
+		.navbar {
+			justify-content: start;
+		}
+
 		.navbar-links {
 			display: none;
 		}
 
 		.navbar-logo {
+			margin-left: 24px;
 			margin-right: 0px;
 		}
 	}

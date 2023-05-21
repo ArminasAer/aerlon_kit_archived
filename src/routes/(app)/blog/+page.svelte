@@ -37,7 +37,7 @@
 
 	.featured-posts {
 		min-width: 300px;
-		padding: 15px 15px 0px 15px;
+		padding: 10px 10px 0px 10px;
 		background: var(--card-featured-background);
 		border: 1px solid var(--card-featured-border);
 		border-radius: 0.4rem;
@@ -47,8 +47,8 @@
 
 	@media only screen and (min-width: 400px) {
 		.main-container {
-			margin-left: 10%;
-			margin-right: 10%;
+			margin-left: 5%;
+			margin-right: 5%;
 		}
 	}
 

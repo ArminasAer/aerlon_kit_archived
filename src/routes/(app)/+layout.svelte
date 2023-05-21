@@ -65,7 +65,7 @@
 
 <div class="wip-container">
 	<div class="wip">
-		<span class="wip-title">Site is under active development!</span>
+		<span class="wip-title">Site is under heavy active development!</span>
 		<span class="wip-details">Many things are broken or placeholder</span>
 	</div>
 </div>
