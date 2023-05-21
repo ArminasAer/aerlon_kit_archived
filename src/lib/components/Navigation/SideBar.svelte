@@ -25,50 +25,17 @@
 				document.documentElement.setAttribute('data-theme', 'light');
 			}
 		});
-
-		let storageColor = localStorage.getItem('color');
-		const colors = document.querySelectorAll('#colors');
-
-		if (!storageColor) {
-			localStorage.setItem('color', 'green');
-		}
-
-		switch (storageColor) {
-			case 'green':
-				document.documentElement.setAttribute('data-color', 'green');
-				break;
-			case 'blue':
-				document.documentElement.setAttribute('data-color', 'blue');
-				break;
-			case 'red':
-				document.documentElement.setAttribute('data-color', 'red');
-				break;
-			case 'orange':
-				document.documentElement.setAttribute('data-color', 'orange');
-				break;
-			case 'pink':
-				document.documentElement.setAttribute('data-color', 'pink');
-				break;
-			case 'purple':
-				document.documentElement.setAttribute('data-color', 'purple');
-				break;
-			default:
-				document.documentElement.setAttribute('data-color', 'green');
-		}
-
-		colors.forEach((el) => {
-			el.addEventListener('click', (e) => {
-				let color = e.target.attributes['data-color'].value;
-
-				document.documentElement.setAttribute('data-color', color);
-				localStorage.setItem('color', color);
-			});
-		});
 	});
 </script>
 
 <svelte:window
 	on:click={(e) => {
+		if (e.target instanceof HTMLElement) {
+			if (e.target.closest('#themer-dropdown-content')) return;
+		}
+		activeSideBar = false;
+	}}
+	on:touchmove={(e) => {
 		if (e.target instanceof HTMLElement) {
 			if (e.target.closest('#themer-dropdown-content')) return;
 		}
@@ -103,14 +70,7 @@
 			</svg>
 		</button>
 		<div class:show={activeSideBar} class="themer-dropdown-content" id="themer-dropdown-content">
-			<div class="side-navbar">
-				<span class="themes-container-title">Links</span>
-				<NavLinks setClass="sidenav" />
-			</div>
 			<div class="themer-content-themes-container">
-				<div class="themes-container-title">
-					<span>Switch Theme</span>
-				</div>
 				<div class="theme-label">
 					<span class="theme-switch-label">Light</span>
 					<div class="theme-switcher">
@@ -121,17 +81,9 @@
 					</div>
 					<span class="theme-switch-label">Dark</span>
 				</div>
-				<div class="themes-container-title">
-					<span>Pick a Color</span>
-				</div>
-				<div class="theme-label">
-					<span id="colors" class="theme-div green" data-color="green" />
-					<span id="colors" class="theme-div blue" data-color="blue" />
-					<span id="colors" class="theme-div red" data-color="red" />
-					<span id="colors" class="theme-div orange" data-color="orange" />
-					<span id="colors" class="theme-div pink" data-color="pink" />
-					<span id="colors" class="theme-div purple" data-color="purple" />
-				</div>
+			</div>
+			<div class="side-navbar">
+				<NavLinks setClass="sidenav" />
 			</div>
 		</div>
 	</div>
@@ -187,6 +139,7 @@
 		top: 0;
 		left: -150px;
 		transition: left 0.3s ease;
+		border-right: 2px solid rgb(41, 41, 41);
 		background-color: var(--themer-content-background);
 		overflow: auto;
 		z-index: 1;
@@ -206,15 +159,9 @@
 	}
 
 	.themer-content-themes-container {
-		margin-top: 5px;
+		margin: 15px 0;
 		padding: 0px 10px;
 		width: 100%;
-	}
-
-	.themes-container-title {
-		margin: 9px 0;
-		padding-bottom: 4px;
-		border-bottom: 1px solid #30363d;
 	}
 
 	// placeholder
@@ -222,39 +169,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-	}
-
-	// placeholder
-	.theme-div {
-		cursor: pointer;
-		height: 30px;
-		width: 30px;
-		border-radius: 0.2rem;
-		margin: 5px 5px;
-
-		&.green {
-			background-color: #00dc82;
-		}
-
-		&.blue {
-			background-color: #0079dc;
-		}
-
-		&.red {
-			background-color: #dc2100;
-		}
-
-		&.orange {
-			background-color: #fea501;
-		}
-
-		&.pink {
-			background-color: #e74392;
-		}
-
-		&.purple {
-			background-color: #c072d4;
-		}
 	}
 
 	.theme-switch-label {

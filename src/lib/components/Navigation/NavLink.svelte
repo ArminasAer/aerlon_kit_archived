@@ -35,9 +35,10 @@
 	}
 
 	.sidenav {
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 		color: #fff;
 		font-weight: 300;
+		align-self: flex-start;
 
 		&.active {
 			color: var(--navbar-link-hover);

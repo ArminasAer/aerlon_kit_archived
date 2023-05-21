@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../$types';
+	import type { PageData } from './$types';
 	import Card from './Card.svelte';
 
 	export let data: PageData;
@@ -22,8 +22,8 @@
 	.main-container {
 		display: flex;
 		flex-direction: column;
-		margin-left: 6%;
-		margin-right: 6%;
+		margin-left: 4%;
+		margin-right: 4%;
 		align-items: center;
 		margin-bottom: 20px;
 	}
@@ -82,13 +82,6 @@
 		.main-container {
 			margin-left: 20%;
 			margin-right: 20%;
-		}
-	}
-
-	@media only screen and (min-width: 1350px) {
-		.main-container {
-			margin-left: 30%;
-			margin-right: 30%;
 		}
 	}
 </style>
