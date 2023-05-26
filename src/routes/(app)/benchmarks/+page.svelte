@@ -14,6 +14,8 @@
 
 <div class="main-container">
 	<h2>HTTP Benchmarks</h2>
+
+	<h4>Full SPA application coming soon...</h4>
 </div>
 
 <style lang="scss">

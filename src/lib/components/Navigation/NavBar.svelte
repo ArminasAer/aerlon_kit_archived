@@ -75,6 +75,13 @@
 		height: 20px;
 	}
 
+	@media only screen and (min-width: 1000px) {
+		.navbar {
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+	}
+
 	@media only screen and (max-width: 530px) {
 		.navbar {
 			justify-content: start;

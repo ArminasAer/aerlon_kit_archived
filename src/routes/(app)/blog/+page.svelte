@@ -36,7 +36,6 @@
 	}
 
 	.featured-posts {
-		min-width: 300px;
 		padding: 10px 10px 0px 10px;
 		background: var(--card-featured-background);
 		border: 1px solid var(--card-featured-border);

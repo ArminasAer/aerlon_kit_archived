@@ -109,6 +109,7 @@
 
 	.wip-container {
 		display: grid;
+		margin: 0 5%;
 	}
 
 	.wip {
@@ -116,7 +117,6 @@
 		flex-direction: column;
 		text-align: center;
 		justify-self: center;
-		width: max-content;
 		padding: 15px 15px 15px 15px;
 		background: #ffa60010;
 		border: 1px solid #ffa500;
