@@ -1,7 +1,7 @@
 .main-snippet {
 	code[class*='language-'],
 	pre[class*='language-'] {
-		color: #c5c8c6;
+		color: #ffffff;
 		font-family: 'CascadiaMono';
 		font-size: 14px;
 		font-weight: 500;
@@ -28,6 +28,7 @@
 		display: grid;
 		overflow-x: auto;
 		padding: 1em 2em;
+		border: 1px solid #ec6032;
 	}
 
 	:not(pre) > code[class*='language-'],
@@ -91,7 +92,7 @@
 	}
 
 	.token.variable {
-		color: #c6c5fe;
+		color: #b480f0;
 	}
 
 	.token.operator {

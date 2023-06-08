@@ -1,31 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import NavLinks from './NavLinks.svelte';
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	let activeSideBar: boolean = false;
-
-	onMount(() => {
-		const storageTheme = localStorage.getItem('theme') || 'dark';
-		const themeSwitcherInput = document.querySelector('#themeSwitch');
-
-		if (storageTheme === 'light') {
-			document.documentElement.setAttribute('data-theme', 'light');
-			themeSwitcherInput.checked = false;
-		} else {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			themeSwitcherInput.checked = true;
-		}
-
-		themeSwitcherInput.addEventListener('change', (e) => {
-			if (e.target.checked) {
-				localStorage.setItem('theme', 'dark');
-				document.documentElement.setAttribute('data-theme', 'dark');
-			} else {
-				localStorage.setItem('theme', 'light');
-				document.documentElement.setAttribute('data-theme', 'light');
-			}
-		});
-	});
 </script>
 
 <svelte:window
@@ -70,18 +47,7 @@
 			</svg>
 		</button>
 		<div class:show={activeSideBar} class="themer-dropdown-content" id="themer-dropdown-content">
-			<div class="themer-content-themes-container">
-				<div class="theme-label">
-					<span class="theme-switch-label">Light</span>
-					<div class="theme-switcher">
-						<label class="theme-switcher-container">
-							<input class="theme-switcher-container-input" id="themeSwitch" type="checkbox" />
-							<span class="theme-switcher-container-span" />
-						</label>
-					</div>
-					<span class="theme-switch-label">Dark</span>
-				</div>
-			</div>
+			<ThemeToggle />
 			<div class="side-navbar">
 				<NavLinks setClass="sidenav" />
 			</div>
@@ -158,90 +124,6 @@
 		&:focus {
 			outline: 0;
 		}
-	}
-
-	.themer-content-themes-container {
-		margin: 15px 0;
-		padding: 0px 10px;
-		width: 100%;
-	}
-
-	// placeholder
-	.theme-label {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.theme-switch-label {
-		color: #eee;
-		font-size: 13px;
-		font-weight: 300;
-		// padding: 0 10px;
-		align-self: center;
-		padding-right: 6px;
-
-		&:last-child {
-			padding-left: 6px;
-			padding-right: 0px;
-		}
-	}
-
-	.theme-switcher {
-		display: flex;
-		align-self: center;
-		justify-self: center;
-	}
-
-	.theme-switcher-container {
-		position: relative;
-		display: inline-block;
-		justify-content: flex-end;
-		width: 45px;
-		height: 22px;
-	}
-
-	.theme-switcher-container-span {
-		position: absolute;
-		cursor: pointer;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #fff;
-		border-radius: 0.9rem;
-	}
-
-	.theme-switcher-container-span::before {
-		position: absolute;
-		content: '';
-		height: 16px;
-		width: 16px;
-		left: 3.5px;
-		bottom: 3px;
-		background-color: #181818;
-		transition: 0.4s;
-		border-radius: 50%;
-	}
-
-	.theme-switcher-container-input {
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
-
-	.theme-switcher-container-input:checked + .theme-switcher-container-span::before {
-		background-color: #181818;
-	}
-
-	.theme-switcher-container-input:checked + .theme-switcher-container-span {
-		background-color: #fff;
-	}
-
-	.theme-switcher-container-input:checked + .theme-switcher-container-span::before {
-		-webkit-transform: translateX(22px);
-		-ms-transform: translateX(22px);
-		transform: translateX(22px);
 	}
 
 	@media only screen and (max-width: 530px) {
