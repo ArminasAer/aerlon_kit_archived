@@ -1,45 +1,27 @@
 <script lang="ts">
+	import Logo from './Logo.svelte';
 	import NavLinks from './NavLinks.svelte';
-	import SideBar from './SideBar.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
+
+	let open = false;
+	let visible = true;
 </script>
 
 <div class="navigation-container">
-	<nav class="navbar" id="navbar">
+	<nav class:visible={visible || open} class:open class="navbar" id="navbar">
 		<div class="navbar-main-logo">
-			<a href="/">
-				<div class="navbar-logo">
-					<svg
-						viewBox="0 0 1500 1500"
-						version="1.1"
-						style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-					>
-						<path
-							id="shape_fill"
-							d="M1500,750l-750,-750l-750,750l750,750l750,-750Z"
-							style="fill:none;"
-						/>
-						<g>
-							<g>
-								<path
-									class="navbar-logo-inner"
-									d="M1185.85,749.999l-435.926,-435.923l-298.059,298.059l167.329,-0l130.977,-130.978l268.811,268.842l-268.811,268.844l-130.977,-130.978l-167.329,0l298.059,298.059l435.926,-435.925Z"
-								/>
-								<path
-									class="navbar-logo-outer"
-									d="M590.109,802.2l0.001,-104.4l-369.145,0l529.084,-529.084l449.843,449.842l168.666,0l-618.558,-618.558l-750,750l750,750l618.558,-618.558l-168.666,-0l-449.843,449.842l-529.084,-529.084l369.144,-0Z"
-								/>
-							</g>
-						</g>
-					</svg>
-				</div>
-			</a>
+			<Logo />
 		</div>
-		<div class="navbar-links">
+		<div aria-expanded={open} class="navbar-links">
 			<NavLinks setClass="" />
 		</div>
-		<div class="navbar-theme-toggle">
-			<ThemeToggle />
+		<button class="menu-toggle" class:open on:click={() => (open = !open)}>
+			<svg class="icon" width="1em" height="1em" />
+		</button>
+		<div aria-expanded={open} class="navbar-theme-toggle">
+			<div class="theme-toggle">
+				<ThemeToggle />
+			</div>
 		</div>
 	</nav>
 </div>
@@ -80,20 +62,6 @@
 		height: 55px;
 	}
 
-	.navbar-logo {
-		height: 37px;
-		width: 37px;
-		// margin-right: 10px;
-	}
-
-	.navbar-logo-outer {
-		fill: var(--navbar-logo-outer);
-	}
-
-	.navbar-logo-inner {
-		fill: var(--navbar-logo-inner);
-	}
-
 	.navbar-main-logo {
 		width: 100%;
 		margin-left: 15px;
@@ -104,12 +72,49 @@
 		display: flex;
 		letter-spacing: 0.03em;
 		justify-content: center;
+
+		&[aria-expanded='true'] {
+			display: flex;
+			padding-top: 15px;
+			padding-left: 10px;
+			margin-top: 55px;
+			background: var(--navbar-background);
+			position: fixed;
+			justify-content: start;
+			// align-items: left;
+			top: 0;
+			height: 200px;
+			width: 100vw;
+			z-index: 100;
+			user-select: none;
+			transition: transform 0.2s;
+			flex-direction: column;
+			gap: 20px;
+
+			::after {
+				content: '';
+			}
+		}
 	}
 
 	.navbar-theme-toggle {
+		margin-right: 15px;
 		width: 100%;
 		display: flex;
 		justify-content: end;
+
+		&[aria-expanded='true'] {
+			margin-right: 0px;
+			display: flex;
+			margin-top: 400px;
+			position: fixed;
+			justify-content: center;
+			justify-items: center;
+			// top: 0;
+			// height: 200px;
+			// width: 100vw;
+			z-index: 100;
+		}
 	}
 
 	@media only screen and (min-width: 800px) {
@@ -133,6 +138,12 @@
 		}
 	}
 
+	@media only screen and (min-width: 531px) {
+		.menu-toggle {
+			display: none;
+		}
+	}
+
 	@media only screen and (max-width: 530px) {
 		.navbar {
 			justify-content: start;
@@ -140,6 +151,23 @@
 
 		.navbar-links {
 			display: none;
+		}
+
+		.navbar-theme-toggle {
+			display: none;
+		}
+
+		.navbar-main-logo {
+			width: min-content;
+		}
+
+		.menu-toggle {
+			position: absolute;
+			top: 5;
+			right: 0;
+			margin-right: 15px;
+			// line-height: 1;
+			z-index: 200;
 		}
 	}
 </style>

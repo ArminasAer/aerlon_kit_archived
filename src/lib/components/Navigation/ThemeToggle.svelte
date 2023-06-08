@@ -30,23 +30,6 @@
 	};
 </script>
 
-<!-- <div class="themer-content-themes-container">
-	<div class="theme-label">
-		<div class="theme-switcher">
-			<label class="theme-switcher-container">
-				<input
-					class="theme-switcher-container-input"
-					checked={storageTheme == 'dark'}
-					on:change={themeChanger}
-					id="themeSwitch"
-					type="checkbox"
-				/>
-				<span class="theme-switcher-container-span" />
-			</label>
-		</div>
-	</div>
-</div> -->
-
 <button
 	on:click={themeChanger}
 	type="button"
@@ -66,7 +49,6 @@
 
 <style lang="scss">
 	button {
-		margin-right: 15px;
 		position: relative;
 		border-radius: 11px;
 		display: block;
@@ -119,74 +101,4 @@
 		width: 12px;
 		height: 12px;
 	}
-
-	// --------------------------
-
-	// .themer-content-themes-container {
-	// 	margin: 15px 0;
-	// 	padding: 0px 10px;
-	// }
-
-	// .theme-label {
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// 	justify-content: center;
-	// }
-
-	// .theme-switcher {
-	// 	display: flex;
-	// 	align-self: center;
-	// 	justify-self: center;
-	// }
-
-	// .theme-switcher-container {
-	// 	position: relative;
-	// 	display: inline-block;
-	// 	justify-content: flex-end;
-	// 	width: 45px;
-	// 	height: 22px;
-	// }
-
-	// .theme-switcher-container-span {
-	// 	position: absolute;
-	// 	cursor: pointer;
-	// 	top: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	bottom: 0;
-	// 	background-color: #fff;
-	// 	border-radius: 0.9rem;
-	// }
-
-	// .theme-switcher-container-span::before {
-	// 	position: absolute;
-	// 	content: '';
-	// 	height: 16px;
-	// 	width: 16px;
-	// 	left: 3.5px;
-	// 	bottom: 3px;
-	// 	background-color: #181818;
-	// 	transition: 0.4s;
-	// 	border-radius: 50%;
-	// }
-
-	// .theme-switcher-container-input {
-	// 	opacity: 0;
-	// 	width: 0;
-	// 	height: 0;
-	// }
-
-	// .theme-switcher-container-input:checked + .theme-switcher-container-span::before {
-	// 	background-color: #181818;
-	// }
-
-	// .theme-switcher-container-input:checked + .theme-switcher-container-span {
-	// 	background-color: #fff;
-	// }
-
-	// .theme-switcher-container-input:checked + .theme-switcher-container-span::before {
-	// 	-webkit-transform: translateX(22px);
-	// 	-ms-transform: translateX(22px);
-	// 	transform: translateX(22px);
-	// }
 </style>
