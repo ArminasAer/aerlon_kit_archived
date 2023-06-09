@@ -2,16 +2,16 @@
 	import { page } from '$app/stores';
 	export let href: string;
 	export let title: string;
-	export let setClass: 'sidenav' | '';
 </script>
 
-<a {href} class={`navbar-link ${setClass}`} class:active={$page.url.pathname === href}>
+<a {href} class={`navbar-link`} class:active={$page.url.pathname === href}>
 	{title}
 </a>
 
 <style lang="scss">
 	.navbar-link {
 		// align-self: center;
+		width: min-content;
 		padding: 0px 10px;
 		font-size: 17px;
 		font-weight: 400;
@@ -31,21 +31,6 @@
 
 		&.active {
 			color: var(--navbar-link-hover);
-		}
-	}
-
-	.sidenav {
-		margin-bottom: 15px;
-		color: #fff;
-		font-weight: 300;
-		align-self: flex-start;
-
-		&.active {
-			color: var(--navbar-link-hover);
-		}
-
-		&:last-child {
-			margin-bottom: 0;
 		}
 	}
 </style>

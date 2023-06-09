@@ -1,24 +1,64 @@
 <script lang="ts">
 	import Logo from './Logo.svelte';
-	import NavLinks from './NavLinks.svelte';
+	import NavLink from './NavLink.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 
 	let open = false;
 	let visible = true;
+
+	let nav: HTMLElement;
+
+	let pageWidth: number;
+
+	$: visible = pageWidth < 530;
 </script>
 
-<div class="navigation-container">
-	<nav class:visible={visible || open} class:open class="navbar" id="navbar">
+<svelte:window
+	bind:innerWidth={pageWidth}
+	on:click={(e) => {
+		// @ts-ignore
+		if (open && !e.target.closest('#navbar')) {
+			open = false;
+		}
+	}}
+/>
+
+<div bind:this={nav} class="navigation-container">
+	<nav class:open class="navbar" id="navbar">
 		<div class="navbar-main-logo">
 			<Logo />
 		</div>
-		<div aria-expanded={open} class="navbar-links">
-			<NavLinks setClass="" />
+		<div aria-expanded={open && visible} class="navbar-links">
+			<NavLink href="/blog" title="Blog" />
+			<NavLink href="/benchmarks" title="Benchmarks" />
+			<NavLink href="/rng" title="RNG" />
+			<NavLink href="/readme" title="Readme" />
 		</div>
 		<button class="menu-toggle" class:open on:click={() => (open = !open)}>
-			<svg class="icon" width="1em" height="1em" />
+			<svg
+				class="menu-toggle-icon"
+				id="themer-dropdown-button"
+				width="100%"
+				height="100%"
+				viewBox="0 0 177 168"
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				xml:space="preserve"
+				style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+			>
+				<path
+					d="M176.5,151.875c0,-2.918 -2.369,-5.287 -5.287,-5.287l-165.926,0c-2.918,0 -5.287,2.369 -5.287,5.287l0,10.574c0,2.917 2.369,5.286 5.287,5.286l165.926,0c2.918,0 5.287,-2.369 5.287,-5.286l0,-10.574Z"
+				/>
+				<path
+					d="M176.5,78.581c0,-2.918 -2.369,-5.287 -5.287,-5.287l-165.926,0c-2.918,0 -5.287,2.369 -5.287,5.287l0,10.573c0,2.918 2.369,5.287 5.287,5.287l165.926,0c2.918,0 5.287,-2.369 5.287,-5.287l0,-10.573Z"
+				/>
+				<path
+					d="M176.5,5.287c0,-2.918 -2.369,-5.287 -5.287,-5.287l-165.926,0c-2.918,0 -5.287,2.369 -5.287,5.287l0,10.573c0,2.918 2.369,5.287 5.287,5.287l165.926,0c2.918,0 5.287,-2.369 5.287,-5.287l0,-10.573Z"
+				/>
+			</svg>
 		</button>
-		<div aria-expanded={open} class="navbar-theme-toggle">
+		<div aria-expanded={open && visible} class="navbar-theme-toggle">
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>
@@ -34,32 +74,20 @@
 		width: 100%;
 		margin-bottom: 15px;
 		background-color: var(--navbar-background);
-		box-shadow: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0.1) 0%,
-			rgba(0, 0, 0, 0.05) 30%,
-			transparent 100%
-		);
-		::after {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 0.3rem;
-			left: 0;
-			bottom: calc(-1 * 0.3rem);
-			background: linear-gradient(
-				to bottom,
-				rgba(0, 0, 0, 0.1) 0%,
-				rgba(0, 0, 0, 0.05) 10%,
-				transparent 100%
-			);
-		}
 	}
 
 	.navbar {
 		display: flex;
 		align-items: center;
 		height: 55px;
+		border-bottom: 0.3rem solid
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 10%, transparent 100%);
+		box-shadow: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.1) 0%,
+			rgba(0, 0, 0, 0.05) 30%,
+			transparent 100%
+		);
 	}
 
 	.navbar-main-logo {
@@ -74,26 +102,24 @@
 		justify-content: center;
 
 		&[aria-expanded='true'] {
+			border-top: 1px solid #292929;
+			border-bottom: 1px solid #292929;
 			display: flex;
 			padding-top: 15px;
 			padding-left: 10px;
+			padding-bottom: 20px;
 			margin-top: 55px;
 			background: var(--navbar-background);
 			position: fixed;
 			justify-content: start;
-			// align-items: left;
 			top: 0;
-			height: 200px;
+			height: min-content;
 			width: 100vw;
 			z-index: 100;
 			user-select: none;
 			transition: transform 0.2s;
 			flex-direction: column;
 			gap: 20px;
-
-			::after {
-				content: '';
-			}
 		}
 	}
 
@@ -104,17 +130,27 @@
 		justify-content: end;
 
 		&[aria-expanded='true'] {
-			margin-right: 0px;
-			display: flex;
-			margin-top: 400px;
-			position: fixed;
-			justify-content: center;
-			justify-items: center;
-			// top: 0;
-			// height: 200px;
-			// width: 100vw;
+			margin-top: 106px;
+			display: block;
+			width: min-content;
+			position: absolute;
+			right: 0;
 			z-index: 100;
 		}
+	}
+
+	.menu-toggle {
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.menu-toggle-icon {
+		fill: var(--html-color);
+		height: 18px;
+		width: 18px;
+		cursor: pointer;
 	}
 
 	@media only screen and (min-width: 800px) {
