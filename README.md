@@ -1,16 +1,14 @@
 ## Ericarthurc.com
 
-## [0.4.0]
+## [0.4.1]
 
 ## Project Layout
 
 ### Project stack
 
-- SvelteKit
-
-### Database stack
-
-- CockroachDB \*\*
+- Vercel
+  - SvelteKit (SSG/SPA)
+  - CockroachDB (Prisma)
 
 ## Previous stacks
 

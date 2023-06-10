@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.1] - 2023-06-10
+
+#### Fixed
+
+- blog index is now sorting posts by date and then alphabetically
+
+#### Changed
+
+- cleaned up some of the code base
+  - removed folders and files from the local file parsing
+
 ## [0.4.0] - 2023-06-10
 
 #### Changed

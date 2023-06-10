@@ -1,24 +1,25 @@
-import MarkdownIt from 'markdown-it';
-import MarkdownAnchorfrom from 'markdown-it-anchor';
-// @ts-ignore
-import MarkdownMeta from 'markdown-it-meta';
-import MarkdownPrism from 'markdown-it-prism';
-import fs from 'fs';
-
 import type { PageServerLoad } from './$types';
+import type { Post } from '@prisma/client';
 import { prisma } from '$lib/prisma';
 
-export const load = (async ({ params }) => {
-	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
+function postsSorter(a: Post, b: Post) {
+	if (a.date > b.date) {
+		return -1;
+	} else if (a.date < b.date) {
+		return 1;
+	} else {
+		if (a.title < b.title) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}
+}
 
+export const load = (async () => {
 	const posts = await prisma.post.findMany();
 
-	// YOU DONT NEED TO PROCESS MARKDOWN LOL
-	// posts.map((p) => {
-	// 	p.markdown = md.render(p.markdown);
-	// });
-
-	// Need to be sorted by date then alphabetically
+	posts.sort(postsSorter);
 
 	return {
 		posts

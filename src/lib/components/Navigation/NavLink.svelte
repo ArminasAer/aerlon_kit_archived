@@ -10,7 +10,6 @@
 
 <style lang="scss">
 	.navbar-link {
-		// align-self: center;
 		width: min-content;
 		padding: 0px 10px;
 		font-size: 17px;
