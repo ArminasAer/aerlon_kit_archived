@@ -8,28 +8,34 @@ import fs from 'fs';
 import { error } from '@sveltejs/kit';
 
 import type { PageServerLoad, EntryGenerator } from './$types';
+import { prisma } from '$lib/prisma';
 
 export const load = (async ({ params }) => {
 	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
 
-	const file = fs.readFileSync(`./markdown/${params.filename}.md`).toString();
+	const post = await prisma.post.findUnique({
+		where: {
+			slug: params.slug
+		}
+	});
 
-	const rendered = md.render(file);
-
-	// @ts-ignore
-	const postMeta = md.meta as meta;
+	if (!post) {
+		throw error(404, {
+			message: 'Not found'
+		});
+	}
 
 	return {
-		markdown: rendered,
-		meta: postMeta
+		markdown: md.render(post.markdown),
+		meta: post
 	};
 }) satisfies PageServerLoad;
 
-export const entries = (() => {
-	let ent: { filename: string }[] = [];
+export const entries = (async () => {
+	const posts = await prisma.post.findMany();
+	let ent: { slug: string }[] = [];
 
-	const dir = fs.readdirSync('./markdown');
-	dir.map((f) => ent.push({ filename: f.split('.')[0] }));
+	posts.map((p) => ent.push({ slug: p.slug }));
 
 	return ent;
 }) satisfies EntryGenerator;

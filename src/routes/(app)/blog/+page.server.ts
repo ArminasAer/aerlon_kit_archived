@@ -6,27 +6,22 @@ import MarkdownPrism from 'markdown-it-prism';
 import fs from 'fs';
 
 import type { PageServerLoad } from './$types';
+import { prisma } from '$lib/prisma';
 
 export const load = (async ({ params }) => {
 	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
 
-	const dir = fs.readdirSync('./markdown');
+	const posts = await prisma.post.findMany();
 
-	let content: meta[] = [];
+	// YOU DONT NEED TO PROCESS MARKDOWN LOL
+	// posts.map((p) => {
+	// 	p.markdown = md.render(p.markdown);
+	// });
 
-	dir.map((p) => {
-		const file = fs.readFileSync(`./markdown/${p}`).toString();
-		md.render(file);
-
-		// @ts-ignore
-		const meta = md.meta as meta;
-		meta.fileName = p.split('.')[0];
-
-		content.push(meta);
-	});
+	// Need to be sorted by date then alphabetically
 
 	return {
-		posts: content
+		posts
 	};
 }) satisfies PageServerLoad;
 
