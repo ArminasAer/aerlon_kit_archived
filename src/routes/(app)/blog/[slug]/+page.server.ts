@@ -42,10 +42,11 @@ export const entries = (async () => {
 
 export const config = {
 	isr: {
-		expiration: 60
+		expiration: 60,
+		allowQuery: ['']
 	}
 };
 
-export const prerender = true;
+export const prerender = false;
 export const ssr = true;
 export const csr = true;
