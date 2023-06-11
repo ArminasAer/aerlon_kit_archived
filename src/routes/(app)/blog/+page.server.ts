@@ -28,10 +28,10 @@ export const load = (async () => {
 
 export const config = {
 	isr: {
-		expiration: false
+		expiration: 60
 	}
 };
 
-// export const prerender = true;
+export const prerender = false;
 export const ssr = true;
 export const csr = true;
