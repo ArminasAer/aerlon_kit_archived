@@ -7,13 +7,13 @@
 
 <div class="main-container">
 	<div class="cards-container">
-		{#each data.posts.filter((p) => p.featured) as post (post.slug)}
+		{#each data.metaList.filter((m) => m.featured) as meta (meta.fileName)}
 			<div class="featured-posts">
-				<Card {post} />
+				<Card {meta} />
 			</div>
 		{/each}
-		{#each data.posts.filter((p) => !p.featured) as post (post.slug)}
-			<Card {post} />
+		{#each data.metaList.filter((m) => !m.featured) as meta (meta.fileName)}
+			<Card {meta} />
 		{/each}
 	</div>
 </div>

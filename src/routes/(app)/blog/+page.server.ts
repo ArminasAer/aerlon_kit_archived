@@ -1,28 +1,11 @@
 import type { PageServerLoad } from './$types';
-import type { Post } from '@prisma/client';
-import { prisma } from '$lib/prisma';
-
-function postsSorter(a: Post, b: Post) {
-	if (a.date > b.date) {
-		return -1;
-	} else if (a.date < b.date) {
-		return 1;
-	} else {
-		if (a.title < b.title) {
-			return -1;
-		} else {
-			return 1;
-		}
-	}
-}
+import { getBlogMetaList } from '$lib/server/models/meta';
 
 export const load = (async () => {
-	const posts = await prisma.post.findMany();
-
-	posts.sort(postsSorter);
+	const metaList = await getBlogMetaList();
 
 	return {
-		posts
+		metaList
 	};
 }) satisfies PageServerLoad;
 

@@ -80,14 +80,6 @@
 		display: flex;
 		align-items: center;
 		height: 55px;
-		border-bottom: 0.3rem solid
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 10%, transparent 100%);
-		box-shadow: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0.1) 0%,
-			rgba(0, 0, 0, 0.05) 30%,
-			transparent 100%
-		);
 	}
 
 	.navbar-main-logo {
@@ -117,9 +109,12 @@
 			width: 100vw;
 			z-index: 100;
 			user-select: none;
-			transition: transform 0.2s;
+			transition: all 5s ease-in;
 			flex-direction: column;
-			gap: 20px;
+
+			:global(.navbar-link:not(:last-child)) {
+				margin-bottom: 15px;
+			}
 		}
 	}
 

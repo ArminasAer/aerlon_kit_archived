@@ -12,7 +12,7 @@
 		word-break: normal;
 		line-height: 1.3;
 		border-radius: 0.3rem;
-		// width: 100%;
+		max-width: min-content;
 
 		-moz-tab-size: 4;
 		-o-tab-size: 4;
@@ -28,7 +28,7 @@
 		display: grid;
 		justify-content: center;
 		overflow-x: auto;
-		padding: 1em 2em;
+		padding: 1em 2.5em;
 		border: 1px solid #ec6032;
 	}
 

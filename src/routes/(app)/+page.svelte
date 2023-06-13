@@ -34,7 +34,8 @@
 
 	.main-snippet {
 		display: grid;
-		max-width: 560px;
+		justify-content: center;
+		// max-width: 560px;
 		margin: auto;
 	}
 </style>

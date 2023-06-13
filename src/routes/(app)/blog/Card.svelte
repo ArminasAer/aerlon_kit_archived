@@ -1,29 +1,28 @@
 <script lang="ts">
+	import type { meta } from '$lib/server/models/meta';
 	import dayjs from 'dayjs';
 
-	import type { Post } from '@prisma/client';
-
-	export let post: Post;
+	export let meta: meta;
 </script>
 
 <div class="card">
 	<div class="card-header-info">
 		<div>
 			<span class="card-date">
-				{dayjs(post.date).format('MMMM D, YYYY')}
+				{dayjs(meta.date).format('MMMM D, YYYY')}
 			</span>
 		</div>
 		<div class="card-header">
-			<a class="card-header-anchor" href={`/blog/${post.slug}`}>
-				<span class="card-title">{post.title}</span>
+			<a class="card-header-anchor" href={`/blog/${meta.fileName}`}>
+				<span class="card-title">{meta.title}</span>
 			</a>
 		</div>
 		<div class="card-snippet-container">
-			<span class="card-snippet">{post.postSnippet}</span>
+			<span class="card-snippet">{meta.postSnippet}</span>
 		</div>
 	</div>
 	<span class="card-categories">
-		{#each post.categories as category}
+		{#each meta.categories as category}
 			<a class="card-category" href={`/category/${category}`}>
 				<span class="card-category-info">{category}</span>
 			</a>

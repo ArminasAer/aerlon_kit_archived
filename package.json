@@ -1,6 +1,6 @@
 {
 	"name": "sveltyboi",
-	"version": "0.4.4",
+	"version": "0.4.5",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --port 8020 --host",
@@ -21,13 +21,13 @@
 		"@sveltejs/adapter-vercel": "^3.0.1",
 		"@sveltejs/kit": "^1.20.2",
 		"@types/markdown-it": "^12.2.3",
-		"@types/node": "^20.2.5",
+		"@types/node": "^20.3.1",
 		"cross-env": "^7.0.3",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prisma": "^4.15.0",
-		"sass": "^1.63.2",
+		"sass": "^1.63.3",
 		"svelte": "^3.59.1",
 		"svelte-check": "^3.4.3",
 		"tslib": "^2.5.3",

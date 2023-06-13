@@ -1,21 +1,18 @@
 import MarkdownIt from 'markdown-it';
 import MarkdownAnchorfrom from 'markdown-it-anchor';
-// @ts-ignore
-import MarkdownMeta from 'markdown-it-meta';
-import MarkdownPrism from 'markdown-it-prism';
 import fs from 'fs';
 
 import type { PageServerLoad } from './$types';
 
 export const load = (({}) => {
-	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
+	const md = new MarkdownIt().use(MarkdownAnchorfrom);
 
-	const file = fs.readFileSync(`./markdown/snippets/index-snippet.md`).toString();
+	const file = fs.readFileSync(`./README.md`).toString();
 
 	const rendered = md.render(file);
 
 	return {
-		markdown: rendered
+		readme: rendered
 	};
 }) satisfies PageServerLoad;
 
