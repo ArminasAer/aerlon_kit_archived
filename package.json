@@ -1,6 +1,6 @@
 {
 	"name": "sveltyboi",
-	"version": "0.4.6",
+	"version": "0.4.7",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --port 8020 --host",
@@ -27,7 +27,7 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prisma": "^4.15.0",
-		"sass": "^1.63.3",
+		"sass": "^1.63.4",
 		"svelte": "^3.59.1",
 		"svelte-check": "^3.4.3",
 		"tslib": "^2.5.3",
@@ -45,7 +45,8 @@
 		"markdown-it": "^13.0.1",
 		"markdown-it-anchor": "^8.6.7",
 		"markdown-it-meta": "^0.0.1",
-		"markdown-it-prism": "^2.3.0"
+		"markdown-it-prism": "^2.3.0",
+		"svelte-local-storage-store": "^0.5.0"
 	},
 	"prisma": {
 		"seed": "ts-node prisma/seed.ts"

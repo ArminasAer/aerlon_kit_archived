@@ -32,7 +32,7 @@
 			<NavLink href="/blog" title="Blog" />
 			<NavLink href="/benchmarks" title="Benchmarks" />
 			<NavLink href="/rng" title="RNG" />
-			<NavLink href="/readme" title="Readme" />
+			<!-- <NavLink href="/readme" title="Readme" /> -->
 		</div>
 		<button class="menu-toggle" class:open on:click={() => (open = !open)}>
 			<svg
@@ -193,10 +193,10 @@
 
 		.menu-toggle {
 			position: absolute;
-			top: 5;
+			top: 0;
 			right: 0;
+			margin-top: 18px;
 			margin-right: 15px;
-			// line-height: 1;
 			z-index: 200;
 		}
 	}
