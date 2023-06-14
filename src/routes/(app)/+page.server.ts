@@ -8,15 +8,12 @@ import fs from 'fs';
 import type { PageServerLoad } from './$types';
 
 export const load = (({}) => {
-	const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
-
-	const file = fs.readFileSync(`./markdown/snippets/index-snippet.md`).toString();
-
-	const rendered = md.render(file);
-
-	return {
-		markdown: rendered
-	};
+	// const md = new MarkdownIt().use(MarkdownMeta).use(MarkdownPrism).use(MarkdownAnchorfrom);
+	// const file = fs.readFileSync(`./markdown/snippets/index-snippet.md`).toString();
+	// const rendered = md.render(file);
+	// return {
+	// 	markdown: rendered
+	// };
 }) satisfies PageServerLoad;
 
 export const prerender = true;

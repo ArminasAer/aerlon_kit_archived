@@ -8,14 +8,15 @@
 
 <div class="main-container">
 	<div class="home-content">
-		<h1>Blog and HTTP Benchmarking site</h1>
+		<h1 class="title">The Tech Privateer</h1>
+		<h2>Blog and HTTP Benchmarking</h2>
 		<h3>
 			My goal is to benchmark HTTP libraries across large sets of languages, hardware and data
 			structures...
 		</h3>
-		<div class="main-snippet">
+		<!-- <div class="main-snippet">
 			{@html data.markdown}
-		</div>
+		</div> -->
 	</div>
 </div>
 
@@ -28,8 +29,14 @@
 		align-items: center;
 	}
 
+	.title {
+		font-size: 40px;
+		color: var(--theme-main-color);
+	}
+
 	.home-content {
 		text-align: center;
+		display: grid;
 	}
 
 	.main-snippet {
