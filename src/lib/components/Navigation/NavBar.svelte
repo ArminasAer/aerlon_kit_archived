@@ -109,7 +109,6 @@
 			width: 100vw;
 			z-index: 100;
 			user-select: none;
-			transition: all 5s ease-in;
 			flex-direction: column;
 
 			:global(.navbar-link:not(:last-child)) {
