@@ -99,7 +99,7 @@
 			padding-top: 15px;
 			padding-left: 10px;
 			padding-bottom: 20px;
-			margin-top: 55px;
+			margin-top: 78px;
 			background: var(--navbar-background);
 			position: fixed;
 			justify-content: start;
