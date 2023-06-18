@@ -4,6 +4,6 @@
 // 	return {};
 // }) satisfies PageServerLoad;
 
-export const prerender = true;
-export const ssr = false;
+export const prerender = false;
+export const ssr = true;
 export const csr = true;

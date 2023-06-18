@@ -1,11 +1,12 @@
 <script lang="ts">
-	import Navbar from '$lib/components/Navigation/NavBar.svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 	import { navigating } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
+
+	import './common.scss';
 
 	inject({ mode: dev ? 'development' : 'production' });
 
@@ -16,6 +17,8 @@
 	});
 
 	let isVisible = false;
+
+	let version = __APP_VERSION__;
 
 	function increase() {
 		if ($p >= 0 && $p < 0.2) {
@@ -63,11 +66,38 @@
 {#if $p > 0 && $p < 1 && isVisible}
 	<progress value={$p} transition:fade={{ duration: 300 }} />
 {/if}
-<Navbar />
+
+<div class="wip-container">
+	<div class="wip">
+		<span class="wip-title">Alpha: {version}</span>
+	</div>
+</div>
 
 <slot />
 
 <style lang="scss">
+	.wip-container {
+		width: 100%;
+	}
+
+	.wip {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-self: center;
+		background: #ffa60010;
+		border-bottom: 1px solid #ffa500;
+		border-top: 1px solid #ffa500;
+		height: min-content;
+	}
+
+	.wip-title {
+		font-size: 15px;
+		font-weight: 400;
+		padding: 4px 0;
+		line-height: 1;
+	}
+
 	progress {
 		--bar-color: rgba(255, 255, 255, 0.3);
 		position: fixed;
