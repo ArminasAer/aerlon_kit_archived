@@ -78,6 +78,8 @@
 <style lang="scss">
 	.wip-container {
 		width: 100%;
+		position: sticky;
+		top: 0;
 	}
 
 	.wip {
@@ -85,10 +87,11 @@
 		flex-direction: column;
 		text-align: center;
 		justify-self: center;
-		background: #ffa60010;
+		background: #312f2a;
 		border-bottom: 1px solid #ffa500;
 		border-top: 1px solid #ffa500;
 		height: min-content;
+		color: #fff;
 	}
 
 	.wip-title {

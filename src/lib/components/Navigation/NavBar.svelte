@@ -69,10 +69,11 @@
 	.navigation-container {
 		display: grid;
 		position: sticky;
-		top: 0;
+		top: 25px;
 		width: 100%;
 		margin-bottom: 15px;
 		background-color: var(--navbar-background);
+		box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
 	}
 
 	.navbar {
