@@ -7,14 +7,19 @@
 
 <div class="main-container">
 	<div class="cards-container">
+		<!-- <div class="featured-container"> -->
+		<!-- <div>Featured Posts</div> -->
 		{#each data.metaList.filter((m) => m.featured) as meta (meta.fileName)}
 			<div class="featured-posts">
 				<Card {meta} />
 			</div>
 		{/each}
-		{#each data.metaList.filter((m) => !m.featured) as meta (meta.fileName)}
-			<Card {meta} />
-		{/each}
+		<!-- </div> -->
+		<div>
+			{#each data.metaList.filter((m) => !m.featured) as meta (meta.fileName)}
+				<Card {meta} />
+			{/each}
+		</div>
 	</div>
 </div>
 
@@ -30,9 +35,18 @@
 
 	.cards-container {
 		display: grid;
-		grid-template-columns: auto;
+		// grid-template-columns: auto;
 		justify-items: center;
 		justify-content: center;
+	}
+
+	.featured-container {
+		padding: 30px 15px 5px 15px;
+		// background: var(--card-featured-background);
+		border: 1px solid var(--card-featured-border);
+		border-radius: 0.4rem;
+		margin-bottom: 20px;
+		// height: min-content;
 	}
 
 	.featured-posts {
@@ -40,7 +54,7 @@
 		background: var(--card-featured-background);
 		border: 1px solid var(--card-featured-border);
 		border-radius: 0.4rem;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		height: min-content;
 	}
 
@@ -65,8 +79,8 @@
 		}
 
 		.cards-container {
-			grid-template-columns: 1fr 1fr;
-			gap: 1.5rem;
+			// grid-template-columns: 1fr 1fr;
+			// gap: 1.5rem;
 		}
 	}
 

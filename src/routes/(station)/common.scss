@@ -1,4 +1,8 @@
+$theme: #25ce4f;
+
 :root {
+	--theme-main-color: #{$theme};
+
 	// Html
 	--html-color: #ffffff;
 	--background-color: #1b1b1b;
@@ -7,10 +11,10 @@
 	--navbar-background: #111111ee;
 	--navbar-border-color: #333;
 	--navbar-link: #ffffff;
-	--navbar-link-hover: #ec6032;
+	--navbar-link-hover: var(--theme-main-color);
 	--navbar-link-hover-background: #3f3f46;
 	--navbar-logo-inner: #fff;
-	--navbar-logo-outer: #ec6032;
+	--navbar-logo-outer: var(--theme-main-color);
 	--navbar-settings: #fff;
 
 	// ThemeToggle
@@ -22,7 +26,7 @@
 
 	// Card
 	--card-title: #ffffff;
-	--card-title-hover: #ec6032;
+	--card-title-hover: var(--theme-main-color);
 	--card-date: #c8c8c8;
 	--card-category-info: #3f3f46;
 	--card-category-hover-background: #71717a;
@@ -35,10 +39,10 @@
 	--card-series-hover-span: #fdfdfd;
 
 	// Featured Card
-	--card-featured-background: #ec603217;
-	--card-featured-border: #ec6032;
+	--card-featured-background: #{rgba($theme, 0.05)};
+	--card-featured-border: var(--theme-main-color);
 
-	--container-header: #ec6032;
+	--container-header: var(--theme-main-color);
 	--main-header-color: #d4d4da;
 
 	// Markdown
@@ -54,21 +58,13 @@
 
 	--code-background-color: #01790b07;
 
-	--theme-main-color: #ec6032;
-
 	// Navbar
-	--navbar-link-hover: #ec6032;
+	--navbar-link-hover: var(--theme-main-color);
 	--navbar-link-hover-background: #3f3f46;
-	--navbar-logo-outer: #ec6032;
+	--navbar-logo-outer: var(--theme-main-color);
 
 	// Card
-	--card-title-hover: #ec6032;
-
-	// Featured Card
-	--card-featured-background: #ec603217;
-	--card-featured-border: #ec6032;
-
-	--container-header: #ec6032;
+	--card-title-hover: var(--theme-main-color);
 }
 
 [data-theme='light'] {

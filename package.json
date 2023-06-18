@@ -1,6 +1,6 @@
 {
 	"name": "sveltyboi",
-	"version": "0.4.8",
+	"version": "0.5.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --port 8020 --host",
@@ -19,7 +19,7 @@
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-node": "^1.2.4",
 		"@sveltejs/adapter-vercel": "^3.0.1",
-		"@sveltejs/kit": "^1.20.2",
+		"@sveltejs/kit": "^1.20.4",
 		"@types/markdown-it": "^12.2.3",
 		"@types/node": "^20.3.1",
 		"cross-env": "^7.0.3",
@@ -39,7 +39,7 @@
 		"@vercel/analytics": "^1.0.1",
 		"chalk": "^5.2.0",
 		"dayjs": "^1.11.8",
-		"dotenv": "^16.1.4",
+		"dotenv": "^16.3.0",
 		"highlight.js": "^11.8.0",
 		"ioredis": "^5.3.2",
 		"markdown-it": "^13.0.1",

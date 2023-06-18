@@ -1,12 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-
-	export let data: PageData;
 </script>
 
 <div class="main-container">
 	<h3>Information about the website, source code, and coder will go here</h3>
-	{@html data.readme}
 </div>
 
 <style lang="scss">

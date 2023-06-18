@@ -6,8 +6,6 @@
 	let open = false;
 	let visible = true;
 
-	let nav: HTMLElement;
-
 	let pageWidth: number;
 
 	$: visible = pageWidth < 530;
@@ -23,16 +21,17 @@
 	}}
 />
 
-<div bind:this={nav} class="navigation-container">
+<div class="navigation-container">
 	<nav class:open class="navbar" id="navbar">
 		<div class="navbar-main-logo">
-			<Logo />
+			<!-- <Logo /> -->
 		</div>
 		<div aria-expanded={open && visible} class="navbar-links">
+			<NavLink href="/" title="Station" />
 			<NavLink href="/blog" title="Blog" />
 			<NavLink href="/benchmarks" title="Benchmarks" />
 			<NavLink href="/rng" title="RNG" />
-			<!-- <NavLink href="/readme" title="Readme" /> -->
+			<NavLink href="/about" title="About" />
 		</div>
 		<button class="menu-toggle" class:open on:click={() => (open = !open)}>
 			<svg

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import './common.scss';
-
 	import Navbar from '$lib/components/Navigation/NavBar.svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
@@ -67,13 +65,6 @@
 {/if}
 <Navbar />
 
-<!-- <div class="wip-container">
-	<div class="wip">
-		<span class="wip-title">Site is under heavy active development!</span>
-		<span class="wip-details">Many things are broken or placeholder</span>
-	</div>
-</div> -->
-
 <slot />
 
 <style lang="scss">
@@ -109,44 +100,5 @@
 
 	progress {
 		color: var(--theme-main-color);
-	}
-
-	.wip-container {
-		display: grid;
-		margin: 0 5%;
-	}
-
-	.wip {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-self: center;
-		padding: 15px 15px 15px 15px;
-		background: #ffa60010;
-		border: 1px solid #ffa500;
-		border-radius: 0.4rem;
-		margin-bottom: 20px;
-		height: min-content;
-	}
-
-	.wip-title {
-		font-size: 20px;
-		font-weight: 600;
-		margin-bottom: 5px;
-		-webkit-animation: colorchange 20s infinite ease-in;
-	}
-
-	@-webkit-keyframes colorchange {
-		0% {
-			color: #ffbc04;
-		}
-
-		50% {
-			color: #ff3604;
-		}
-
-		100% {
-			color: #ffbc04;
-		}
 	}
 </style>

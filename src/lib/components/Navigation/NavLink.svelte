@@ -2,9 +2,15 @@
 	import { page } from '$app/stores';
 	export let href: string;
 	export let title: string;
+	export let stationLink: boolean = false;
 </script>
 
-<a {href} class={`navbar-link`} class:active={$page.url.pathname === href}>
+<a
+	{href}
+	class="navbar-link"
+	class:active={$page.url.pathname === href}
+	class:station={stationLink}
+>
 	{title}
 </a>
 
@@ -22,14 +28,22 @@
 		-ms-user-select: none; /* IE10+/Edge */
 		user-select: none; /* Standard */
 
-		@media (hover: hover) {
+		&.station {
+			font-size: 20px;
+			color: var(--theme-main-color);
 			&:hover {
-				color: var(--navbar-link-hover);
+				color: #97dba8;
 			}
 		}
 
 		&.active {
 			color: var(--navbar-link-hover);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--navbar-link-hover);
+			}
 		}
 	}
 </style>
