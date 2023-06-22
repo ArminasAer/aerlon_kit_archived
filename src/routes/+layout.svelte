@@ -82,9 +82,8 @@
 		flex-direction: column;
 		text-align: center;
 		justify-self: center;
-		background: #312f2a;
-		border-bottom: 1px solid #ffa500;
-		border-top: 1px solid #ffa500;
+		background: #030303;
+		border-bottom: 1px solid #a444f3;
 		height: min-content;
 		color: #fff;
 	}

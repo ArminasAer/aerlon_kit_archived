@@ -1,4 +1,4 @@
-$theme: #ce2525;
+$theme: #a444f3;
 
 :root {
 	--theme-main-color: #{$theme};
@@ -8,10 +8,10 @@ $theme: #ce2525;
 	--background-color: #0f0f0f;
 
 	// Station
-	--link-hover: #8d0e0e;
+	--link-hover: #8c08f8;
 
 	// Navbar
-	--navbar-background: #000000ee;
+	--navbar-background: #0f0f0f;
 	--navbar-border-color: #333;
 	--navbar-link: #ffffff;
 	--navbar-link-hover: var(--theme-main-color);
@@ -68,48 +68,6 @@ $theme: #ce2525;
 
 	// Card
 	--card-title-hover: var(--theme-main-color);
-}
-
-[data-theme='light'] {
-	--html-color: #272727;
-	--background-color: #f7f7f7;
-
-	// Navbar
-	--navbar-background: #ffffffee;
-	--navbar-border-color: #eaeaea;
-	--navbar-link: #272727;
-	--navbar-link-hover-background: #3f3f46;
-	--navbar-logo-inner: #2d2d2d;
-	--navbar-settings: #2d2d2d;
-
-	// ThemeToggle
-	--theme-toggle-border: #676779;
-	--theme-toggle-background: #ffffff;
-	--theme-toggle-color-hover: #212121;
-	--theme-toggle-border-hover: #212121;
-	--theme-toggle-check-background: #e5eef5;
-
-	// Card
-	--card-title: #2d2d2d;
-	--card-date: #2d2d2d;
-	--card-category-info: #3f3f46;
-	--card-category-hover-background: #71717a;
-
-	// Series Card
-	--card-series-background: #161b22;
-	--card-series-border: #30363d;
-	--card-series: #fafafa;
-	--card-series-hover-background: #71717a;
-	--card-series-hover-span: #fdfdfd;
-
-	--code-background-color: #0d1117;
-	--code-border-color: #0d1117;
-
-	--main-header-color: #2d2d2d;
-
-	// Markdown
-	--markdown-color: #2d2d2d;
-	--markdown-h1-color: #2d2d2d;
 }
 
 @font-face {

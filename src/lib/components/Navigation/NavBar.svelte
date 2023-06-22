@@ -58,9 +58,9 @@
 			</svg>
 		</button>
 		<div aria-expanded={open && visible} class="navbar-theme-toggle">
-			<div class="theme-toggle">
+			<!-- <div class="theme-toggle">
 				<ThemeToggle />
-			</div>
+			</div> -->
 		</div>
 	</nav>
 </div>
