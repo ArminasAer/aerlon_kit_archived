@@ -25,9 +25,6 @@
 						height="100%"
 						viewBox="0 0 276 169"
 						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						xml:space="preserve"
 						style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
 						><path
 							d="M137.997,119.798l137.998,-119.798l-0,49.008l-137.998,119.798l-137.997,-119.798l0,-49.008l137.997,119.798l0,-119.798l0,119.798Z"
@@ -79,20 +76,26 @@
 
 	.featured-header {
 		display: flex;
+		align-items: center;
 	}
 
 	.featured-title {
 		flex-grow: 1;
 		font-size: 20px;
+		line-height: 1;
 	}
 
 	.feature-collapse-button {
+		// align-self: center;
+		// justify-self: center;
 		fill: white;
 		display: grid;
+		position: relative;
+		z-index: 0;
 		width: 15px;
 		height: 15px;
 		transition: fill 300ms, transform 300ms;
-		transform: rotateX(180deg);
+		// transform: rotateX(180deg);
 
 		&:hover {
 			// fill: purple;
@@ -100,12 +103,11 @@
 		}
 
 		&.collapsed {
-			transform: rotateX(0deg);
+			transform: rotate(180deg);
 		}
 	}
 
 	.featured-posts-container {
-		// height: min-content;
 		margin-top: 10px;
 		gap: 15px;
 	}

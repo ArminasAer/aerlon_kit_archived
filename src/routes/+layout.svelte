@@ -74,6 +74,7 @@
 
 <style lang="scss">
 	.wip-container {
+		z-index: 100;
 		width: 100%;
 		position: sticky;
 		top: 0;

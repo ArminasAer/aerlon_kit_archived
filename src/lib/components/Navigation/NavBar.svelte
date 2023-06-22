@@ -67,6 +67,7 @@
 
 <style lang="scss">
 	.navigation-container {
+		z-index: 100;
 		display: grid;
 		position: sticky;
 		top: 25px;
