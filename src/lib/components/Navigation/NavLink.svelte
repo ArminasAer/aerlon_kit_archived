@@ -32,7 +32,7 @@
 			font-size: 20px;
 			color: var(--theme-main-color);
 			&:hover {
-				color: #97dba8;
+				color: var(--link-hover);
 			}
 		}
 

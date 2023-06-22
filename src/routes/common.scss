@@ -1,14 +1,17 @@
-$theme: #25ce4f;
+$theme: #ce2525;
 
 :root {
 	--theme-main-color: #{$theme};
 
 	// Html
 	--html-color: #ffffff;
-	--background-color: #1b1b1b;
+	--background-color: #0f0f0f;
+
+	// Station
+	--link-hover: #8d0e0e;
 
 	// Navbar
-	--navbar-background: #111111ee;
+	--navbar-background: #000000ee;
 	--navbar-border-color: #333;
 	--navbar-link: #ffffff;
 	--navbar-link-hover: var(--theme-main-color);

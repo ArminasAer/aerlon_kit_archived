@@ -6,7 +6,7 @@
 </script>
 
 <div class="main-container">
-	<h3>{rng}</h3>
+	<h3 class="rng">{rng}</h3>
 	<button on:click={randomize}>Randomize</button>
 </div>
 
@@ -18,6 +18,10 @@
 		margin-right: 6%;
 		align-items: center;
 		margin-bottom: 20px;
+	}
+
+	.rng {
+		font-size: 30px;
 	}
 
 	button {

@@ -6,7 +6,7 @@
 	<div class="station">
 		<h1 class="title">Aerlon</h1>
 		<h3 class="description">
-			An airship station where all knowledge and wisdom are shared upon all voyagers
+			An airship station where knowledge and wisdom are shared upon all voyagers
 		</h3>
 		<h4 class="selector">Choose what vessel to journey on:</h4>
 		<div class="vessels">

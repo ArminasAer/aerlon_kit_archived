@@ -17,7 +17,6 @@
 	});
 
 	let isVisible = false;
-
 	let version = __APP_VERSION__;
 
 	function increase() {
@@ -68,9 +67,7 @@
 {/if}
 
 <div class="wip-container">
-	<div class="wip">
-		<span class="wip-title">Alpha: {version}</span>
-	</div>
+	<span class="wip-title">Version {version}α</span>
 </div>
 
 <slot />
@@ -80,9 +77,6 @@
 		width: 100%;
 		position: sticky;
 		top: 0;
-	}
-
-	.wip {
 		display: flex;
 		flex-direction: column;
 		text-align: center;

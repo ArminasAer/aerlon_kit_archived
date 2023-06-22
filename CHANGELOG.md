@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.4] - 2023-06-22
+
+#### Added
+
+- testing out a collapsable div for featured posts
+
+#### Changed
+
+- upgraded to svelte 4
+- main theme color changed to a red; not sure if it will stay
+
 ## [0.5.3] - 2023-06-19
 
 #### Fixed
