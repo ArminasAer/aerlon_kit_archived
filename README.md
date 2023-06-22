@@ -1,6 +1,6 @@
 ## aerlon.com
 
-## [0.5.6]
+## [0.5.7]
 
 - very much in alpha still, but will publish the site under the domain
 

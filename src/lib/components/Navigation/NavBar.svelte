@@ -70,7 +70,7 @@
 		z-index: 100;
 		display: grid;
 		position: sticky;
-		top: 25px;
+		top: 24px;
 		width: 100%;
 		margin-bottom: 15px;
 		background-color: var(--navbar-background);
