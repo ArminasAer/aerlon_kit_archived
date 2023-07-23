@@ -1,0 +1,68 @@
+$tmc: #185c9c;
+
+:root {
+	--tmc: #{$tmc};
+
+	// Html
+	--html-color: #ffffff;
+	--html-b: linear-gradient(to bottom, #000000 50%, #14102e 100%);
+
+	// Navbar
+	--navbar-background: #0f0f0ff1;
+	--navbar-border-color: #333;
+	--navbar-link: #ffffff;
+	--navbar-link-hover: #{$tmc};
+	--navbar-link-hover-background: #3f3f46;
+	--navbar-logo-inner: #fff;
+	--navbar-logo-outer: #{$tmc};
+	--navbar-settings: #fff;
+
+	// ThemeToggle
+	--theme-toggle-border: #a6a6a6;
+	--theme-toggle-background: #121212;
+	--theme-toggle-color-hover: #e6e6e6;
+	--theme-toggle-border-hover: #e6e6e6;
+	--theme-toggle-check-background: #383838;
+
+	// Card
+	--card-title: #ffffff;
+	--card-title-hover: #{$tmc};
+	--card-date: #c8c8c8;
+	--card-category-info: #3f3f46;
+	--card-category-hover-background: #71717a;
+
+	// Series Card
+	--card-series-background: #161b22;
+	--card-series-border: #30363d;
+	--card-series: #fafafa;
+	--card-series-hover-background: #71717a;
+	--card-series-hover-span: #fdfdfd;
+
+	// Featured Card
+	--card-featured-background: #{rgba($tmc, 0.05)};
+	--card-featured-border: #{$tmc};
+
+	--container-header: #{$tmc};
+	--main-header-color: #d4d4da;
+
+	// Markdown
+	--markdown-color: #babac2;
+	--code-background-color: transparent;
+	--markdown-tags-color: #ffb951;
+	--markdown-h1-color: #d4d4da;
+	--markdown-h2-color: #d008eb;
+	--markdown-h3-color: #ff2ea4;
+	--markdown-h4-color: #8be9fd;
+	--markdown-a-color: #40d0f0;
+	--markdown-a-hover-color: #40d0f0c0;
+
+	--code-background-color: #01790b07;
+
+	// Navbar
+	--navbar-link-hover: #{$tmc};
+	--navbar-link-hover-background: #3f3f46;
+	--navbar-logo-outer: #{$tmc};
+
+	// Card
+	--card-title-hover: #{$tmc};
+}

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Logo from './Logo.svelte';
 	import NavLink from './NavLink.svelte';
-	import ThemeToggle from './ThemeToggle.svelte';
 
 	let open = false;
 	let visible = true;
@@ -23,8 +21,40 @@
 
 <div class="navigation-container">
 	<nav class:open class="navbar" id="navbar">
-		<div class="navbar-main-logo">
-			<!-- <Logo /> -->
+		<div class="navbar-logo-container">
+			<a class="navbar-logo-anchor" href="/">
+				<svg
+					class="navbar-logo"
+					width="100%"
+					height="100%"
+					viewBox="0 0 203 127"
+					version="1.1"
+					style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+				>
+					<g transform="matrix(1,0,0,1,-174.416,-151.69)">
+						<g>
+							<g transform="matrix(5.25402,0,0,5.25402,-919.543,-789.04)">
+								<path
+									d="M208.8,201.258C208.499,201.658 208.58,202.229 208.979,202.531C209.379,202.832 209.95,202.751 210.252,202.352L225.32,182.355C226.41,180.909 228.584,180.909 229.674,182.355L244.742,202.352C245.043,202.751 245.615,202.832 246.015,202.531C246.415,202.229 246.494,201.658 246.193,201.258L231.125,181.262C229.309,178.851 225.685,178.851 223.869,181.262L208.8,201.258Z"
+									style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:0.81px;"
+								/>
+							</g>
+							<g transform="matrix(2.31159,0,0,2.31159,-250.15,-221.514)">
+								<path
+									d="M208.8,201.258C208.499,201.658 208.58,202.229 208.979,202.531C209.379,202.832 209.95,202.751 210.252,202.352L225.32,182.355C226.41,180.909 228.584,180.909 229.674,182.355L244.742,202.352C245.043,202.751 245.615,202.832 246.015,202.531C246.415,202.229 246.494,201.658 246.193,201.258L231.125,181.262C229.309,178.851 225.685,178.851 223.869,181.262L208.8,201.258Z"
+									style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:2.88px;"
+								/>
+							</g>
+							<g transform="matrix(-1.06994,1.3103e-16,-1.3103e-16,-1.06994,519.139,430.997)">
+								<path
+									d="M208.8,201.258C208.499,201.658 208.58,202.229 208.979,202.531C209.379,202.832 209.95,202.751 210.252,202.352L225.32,182.355C226.41,180.909 228.584,180.909 229.674,182.355L244.742,202.352C245.043,202.751 245.615,202.832 246.015,202.531C246.415,202.229 246.494,201.658 246.193,201.258L231.125,181.262C229.309,178.851 225.685,178.851 223.869,181.262L208.8,201.258Z"
+									style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:7.79px;"
+								/>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</a>
 		</div>
 		<div aria-expanded={open && visible} class="navbar-links">
 			<NavLink href="/" title="Station" />
@@ -57,11 +87,7 @@
 				/>
 			</svg>
 		</button>
-		<div aria-expanded={open && visible} class="navbar-theme-toggle">
-			<!-- <div class="theme-toggle">
-				<ThemeToggle />
-			</div> -->
-		</div>
+		<div />
 	</nav>
 </div>
 
@@ -70,44 +96,74 @@
 		z-index: 100;
 		display: grid;
 		position: sticky;
-		top: 24px;
+		top: 23px;
 		width: 100%;
 		margin-bottom: 15px;
 		background-color: var(--navbar-background);
 		box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+		height: 50px;
+
+		// expanded and scrolled
 	}
 
 	.navbar {
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		height: 55px;
 	}
 
-	.navbar-main-logo {
-		width: 100%;
-		margin-left: 15px;
+	.navbar-logo-container {
+		height: 50px;
+		display: none;
+	}
+
+	.navbar-logo-anchor {
+		height: 25px;
+		width: 35px;
+		justify-self: center;
+	}
+
+	.navbar-logo {
+		height: 25px;
+		// width: 35px;
 	}
 
 	.navbar-links {
-		width: 100%;
-		display: flex;
+		// display: flex;
+		// letter-spacing: 0.03em;
+		// justify-content: center;
 		letter-spacing: 0.03em;
+		background: none;
 		justify-content: center;
 
 		&[aria-expanded='true'] {
+			// border-top: 1px solid #292929;
+			// border-bottom: 1px solid #292929;
+			// display: flex;
+			// padding-top: 15px;
+			// padding-left: 10px;
+			// padding-bottom: 20px;
+			// margin-top: 78px;
+			// background: var(--navbar-background);
+			// position: fixed;
+			// justify-content: start;
+			// top: 0;
+			// height: min-content;
+			// width: 100vw;
+			// z-index: 100;
+			// user-select: none;
+			// flex-direction: column;
 			border-top: 1px solid #292929;
 			border-bottom: 1px solid #292929;
 			display: flex;
-			padding-top: 15px;
-			padding-left: 10px;
-			padding-bottom: 20px;
-			margin-top: 78px;
-			background: var(--navbar-background);
-			position: fixed;
+			padding: 20px 0;
+			margin-top: 0px;
+			background-color: var(--navbar-background);
+			position: sticky;
 			justify-content: start;
-			top: 0;
 			height: min-content;
-			width: 100vw;
+			// width: 100vw;
+			width: 100%;
 			z-index: 100;
 			user-select: none;
 			flex-direction: column;
@@ -115,22 +171,6 @@
 			:global(.navbar-link:not(:last-child)) {
 				margin-bottom: 15px;
 			}
-		}
-	}
-
-	.navbar-theme-toggle {
-		margin-right: 15px;
-		width: 100%;
-		display: flex;
-		justify-content: end;
-
-		&[aria-expanded='true'] {
-			margin-top: 106px;
-			display: block;
-			width: min-content;
-			position: absolute;
-			right: 0;
-			z-index: 100;
 		}
 	}
 
@@ -177,19 +217,18 @@
 
 	@media only screen and (max-width: 530px) {
 		.navbar {
-			justify-content: start;
+			display: grid;
+			grid-template-columns: 1fr;
 		}
 
 		.navbar-links {
 			display: none;
 		}
 
-		.navbar-theme-toggle {
-			display: none;
-		}
-
-		.navbar-main-logo {
-			width: min-content;
+		.navbar-logo-container {
+			display: grid;
+			height: 50px;
+			align-items: center;
 		}
 
 		.menu-toggle {

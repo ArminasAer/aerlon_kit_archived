@@ -91,7 +91,8 @@
 	}
 
 	.station-logo-box {
-		margin: 40px 0;
+		margin-top: 60px;
+		margin-bottom: 30px;
 		width: 100%;
 	}
 

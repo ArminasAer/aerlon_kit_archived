@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import { dev } from '$app/environment';
 
-	import './common.scss';
+	import './styles/common.scss';
 
 	// progress bar value
 	const p = tweened(0, {
@@ -82,7 +82,7 @@
 		flex-direction: column;
 		text-align: center;
 		justify-self: center;
-		background: var(--theme-main-color);
+		background: var(--tmc);
 		height: min-content;
 		color: #fff;
 	}
@@ -117,14 +117,14 @@
 
 	/* value: */
 	progress::-webkit-progress-value {
-		background-color: var(--theme-main-color) !important;
+		background-color: #332277 !important;
 	}
 
 	progress::-moz-progress-bar {
-		background-color: var(--theme-main-color) !important;
+		background-color: #332277 !important;
 	}
 
 	progress {
-		color: var(--theme-main-color);
+		color: #332277;
 	}
 </style>

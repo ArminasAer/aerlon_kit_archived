@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+
+html {
+	font-family: 'Gx';
+	-webkit-tap-highlight-color: transparent;
+	background: var(--html-b);
+	color: var(--html-color);
+	min-height: 100vh;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	text-rendering: geometricPrecision;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+
+	&:horizontal {
+		height: 4px;
+	}
+}
+
+::-webkit-scrollbar-track {
+	background: var(--html-b);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--tmc);
+	border-radius: 4px;
+
+	&:hover {
+		background: #555;
+	}
+}
+
+@import 'space';

@@ -1,0 +1,63 @@
+$starFieldWidth: 4000;
+$starFieldHeight: 1000;
+$starStartOffset: 600px;
+
+@function create-stars($n) {
+	$stars: '#{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+
+	@for $i from 2 through $n {
+		$stars: '#{$stars} , #{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+	}
+	@return unquote($stars);
+}
+
+.stars {
+	z-index: -11;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	position: absolute;
+	background: transparent;
+	box-shadow: create-stars(150);
+	animation: animStar 1000s ease-in-out infinite;
+	&:after {
+		content: ' ';
+		top: -$starStartOffset;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		position: absolute;
+		background: transparent;
+		box-shadow: create-stars(150);
+	}
+}
+
+.stars2 {
+	z-index: -10;
+	width: 1px;
+	height: 1px;
+	border-radius: 50%;
+	position: absolute;
+	background: transparent;
+	box-shadow: create-stars(150);
+	animation: animStar 700s linear infinite;
+	&:after {
+		content: ' ';
+		top: -$starStartOffset;
+		width: 1px;
+		height: 1px;
+		border-radius: 50%;
+		position: absolute;
+		background: transparent;
+		box-shadow: create-stars(100);
+	}
+}
+
+@keyframes animStar {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-#{$starFieldHeight}px) translateX(-#{$starFieldWidth}px);
+	}
+}

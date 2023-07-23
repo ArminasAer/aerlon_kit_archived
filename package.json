@@ -1,6 +1,6 @@
 {
 	"name": "sveltyboi",
-	"version": "0.6.0",
+	"version": "0.6.1",
 	"scripts": {
 		"dev": "vite dev --port 8020 --host",
 		"build": "vite build",
@@ -15,9 +15,7 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-node": "^1.3.1",
-		"@sveltejs/adapter-vercel": "^3.0.2",
 		"@sveltejs/kit": "^1.22.3",
 		"@types/markdown-it": "^12.2.3",
 		"@types/node": "^20.4.4",
