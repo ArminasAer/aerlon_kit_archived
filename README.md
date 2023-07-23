@@ -1,6 +1,6 @@
 ## aerlon.com
 
-## [0.5.7]
+## [0.6.0]
 
 - very much in alpha still, but will publish the site under the domain
 
@@ -16,4 +16,3 @@
 
 - Vercel
   - SvelteKit (SSG/SPA)
-  - CockroachDB (Prisma)

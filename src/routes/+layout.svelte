@@ -4,11 +4,8 @@
 	import { navigating } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
 
 	import './common.scss';
-
-	inject({ mode: dev ? 'development' : 'production' });
 
 	// progress bar value
 	const p = tweened(0, {
@@ -62,12 +59,15 @@
 	}
 </script>
 
+<div class="stars" />
+<div class="stars2" />
+
 {#if $p > 0 && $p < 1 && isVisible}
 	<progress value={$p} transition:fade={{ duration: 300 }} />
 {/if}
 
 <div class="wip-container">
-	<span class="wip-title">Version {version}α</span>
+	<span class="wip-title">Version: {version}α</span>
 </div>
 
 <slot />
@@ -82,8 +82,7 @@
 		flex-direction: column;
 		text-align: center;
 		justify-self: center;
-		background: #030303;
-		border-bottom: 1px solid #a444f3;
+		background: var(--theme-main-color);
 		height: min-content;
 		color: #fff;
 	}

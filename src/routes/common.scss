@@ -1,11 +1,11 @@
-$theme: #a444f3;
+$theme: #4481f3;
 
 :root {
 	--theme-main-color: #{$theme};
 
 	// Html
 	--html-color: #ffffff;
-	--background-color: #0f0f0f;
+	--html-b: linear-gradient(to bottom, #000000 50%, #14102e 100%);
 
 	// Station
 	--link-hover: #8c08f8;
@@ -71,8 +71,13 @@ $theme: #a444f3;
 }
 
 @font-face {
+	font-family: 'Pondar';
+	src: url('/fonts/Pondar.otf') format('opentype');
+}
+
+@font-face {
 	font-family: 'Gx';
-	src: url('/fonts/GX.woff2') format('woff2');
+	src: url('/fonts/Gx.woff2') format('woff2');
 }
 
 @font-face {
@@ -83,8 +88,9 @@ $theme: #a444f3;
 html {
 	font-family: 'Gx';
 	-webkit-tap-highlight-color: transparent;
-	background-color: var(--background-color);
+	background: var(--html-b);
 	color: var(--html-color);
+	min-height: 100vh;
 
 	&:focus {
 		outline: 0;
@@ -123,5 +129,69 @@ body {
 
 	&:hover {
 		background: #555;
+	}
+}
+
+$starFieldWidth: 4000;
+$starFieldHeight: 1000;
+$starStartOffset: 600px;
+
+@function create-stars($n) {
+	$stars: '#{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+
+	@for $i from 2 through $n {
+		$stars: '#{$stars} , #{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF';
+	}
+	@return unquote($stars);
+}
+
+.stars {
+	z-index: -11;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	position: absolute;
+	background: transparent;
+	box-shadow: create-stars(150);
+	animation: animStar 1000s ease-in-out infinite;
+	&:after {
+		content: ' ';
+		top: -$starStartOffset;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		position: absolute;
+		background: transparent;
+		box-shadow: create-stars(150);
+	}
+}
+
+.stars2 {
+	z-index: -10;
+	width: 1px;
+	height: 1px;
+	border-radius: 50%;
+	position: absolute;
+	background: transparent;
+	box-shadow: create-stars(150);
+	animation: animStar 700s linear infinite;
+	&:after {
+		content: ' ';
+		top: -$starStartOffset;
+		width: 1px;
+		height: 1px;
+		border-radius: 50%;
+		position: absolute;
+		background: transparent;
+		box-shadow: create-stars(100);
+	}
+}
+
+@keyframes animStar {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-#{$starFieldHeight}px) translateX(-#{$starFieldWidth}px);
 	}
 }
